@@ -1,0 +1,259 @@
+---
+import MainLayout from "../layout/MainLayout.astro";
+
+// Add timeline data
+const timeline = [
+  {
+    period: "2022-Present",
+    role: "Senior Data Scientist",
+    company: "London Stock Exchange Group",
+    description: "Leading data science initiatives and developing ML solutions for financial markets.",
+    achievements: [
+      "Led development of AI-based ingestion pipeline",
+      "Reduced processing time by 95%",
+      "Automated manual processes saving 200K GBP"
+    ]
+  },
+  {
+    period: "2019-2022",
+    role: "Data Scientist",
+    company: "LSEG",
+    description: "Developed and implemented ML models for financial data analysis.",
+    achievements: [
+      "Built end-to-end Non-English extraction pipeline",
+      "Implemented table detection API using YOLO",
+      "Reduced manual effort by 70%"
+    ]
+  },
+  {
+    period: "2017-2019",
+    role: "Reconciliation Associate",
+    company: "State Street Global Advisory",
+    description: "Managed financial reconciliation processes and data analysis.",
+    achievements: [
+      "Automated reconciliation workflows",
+      "Reduced processing time by 40%",
+      "Improved accuracy by 25%"
+    ]
+  }
+];
+---
+
+<MainLayout 
+  title="About Abhilash Kumar Panda" 
+  seoTitle="About Abhilash Kumar Panda" 
+  seoDesc="Senior Data Scientist with expertise in ML, AI, and Data Analytics">
+  
+  <section class="max-w-4xl mx-auto py-12 px-4 animate-fadeIn">
+    <!-- Hero Section -->
+    <div class="text-center mb-16">
+      <h1 class="text-4xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-[#4461f2] to-[#bc52ee]">
+        About Me
+      </h1>
+      <p class="text-lg text-white/70 max-w-2xl mx-auto leading-relaxed">
+        With over 7 years of experience in data science and analytics, I specialize in building AI-powered solutions 
+        that drive business value in the financial sector.
+      </p>
+    </div>
+
+    <!-- Experience Timeline -->
+    <div class="mb-16">
+      <h2 class="text-2xl font-semibold text-white mb-8">Professional Journey</h2>
+      <div class="relative space-y-8">
+        <div class="absolute left-4 top-2 h-full w-0.5 bg-gradient-to-b from-[#4461f2] to-[#bc52ee] opacity-20"></div>
+        
+        {timeline.map((item, index) => (
+          <div class="relative pl-12 group">
+            <div class="absolute left-0 top-2 h-4 w-4 rounded-full bg-[#000212] border-2 border-[#4461f2] group-hover:border-[#bc52ee] transition-colors"></div>
+            <div class="bg-white/5 backdrop-blur-sm rounded-lg p-6 border border-white/10 hover:border-[#4461f2]/50 transition-all duration-300">
+              <div class="flex flex-wrap items-center justify-between mb-2">
+                <h3 class="text-xl font-semibold text-white group-hover:text-[#4461f2] transition-colors">
+                  {item.role}
+                </h3>
+                <span class="text-sm text-white/50">{item.period}</span>
+              </div>
+              <p class="text-white/70 mb-4">{item.company}</p>
+              <p class="text-white/60 mb-4">{item.description}</p>
+              <ul class="space-y-2">
+                {item.achievements.map(achievement => (
+                  <li class="flex items-center text-sm text-white/60">
+                    <svg class="flex-shrink-0 h-4 w-4 text-[#4461f2] mr-2" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    {achievement}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Technical Stack -->
+    <div class="mb-16">
+      <h2 class="text-2xl font-semibold text-white mb-8">Technical Arsenal</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- Left Column -->
+        <div class="space-y-6">
+          <div>
+            <h3 class="font-semibold text-white/90 mb-3">Core Stack</h3>
+            <div class="flex flex-wrap gap-2">
+              <span class="skill-tag">Python</span>
+              <span class="skill-tag">SQL</span>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="font-semibold text-white/90 mb-3">Development & Tools</h3>
+            <div class="flex flex-wrap gap-2">
+              <span class="skill-tag">Jupyter</span>
+              <span class="skill-tag">Git</span>
+              <span class="skill-tag">Docker</span>
+              <span class="skill-tag">DVC</span>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="font-semibold text-white/90 mb-3">ML/DL Frameworks</h3>
+            <div class="flex flex-wrap gap-2">
+              <span class="skill-tag">TensorFlow</span>
+              <span class="skill-tag">PyTorch</span>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="font-semibold text-white/90 mb-3">MLOps & Deployment</h3>
+            <div class="flex flex-wrap gap-2">
+              <span class="skill-tag">MLflow</span>
+              <span class="skill-tag">ZenML</span>
+              <span class="skill-tag">DVC</span>
+              <span class="skill-tag">Ray</span>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="font-semibold text-white/90 mb-3">Cloud & Infrastructure</h3>
+            <div class="flex flex-wrap gap-2">
+              <span class="skill-tag">Azure</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column -->
+        <div class="space-y-6">
+          <div>
+            <h3 class="font-semibold text-white/90 mb-3">API Development</h3>
+            <div class="flex flex-wrap gap-2">
+              <span class="skill-tag">FastAPI</span>
+              <span class="skill-tag">Flask</span>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="font-semibold text-white/90 mb-3">Large Language Models</h3>
+            <div class="flex flex-wrap gap-2">
+              <span class="skill-tag">Langchain</span>
+              <span class="skill-tag">LlamaIndex</span>
+              <span class="skill-tag">VLLM</span>
+              <span class="skill-tag">Unsloth</span>
+              <span class="skill-tag">Chainlit</span>
+              <span class="skill-tag">OpenAI</span>
+              <span class="skill-tag">LiteLLM</span>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="font-semibold text-white/90 mb-3">Machine Learning</h3>
+            <div class="flex flex-wrap gap-2">
+              <span class="skill-tag">Regression</span>
+              <span class="skill-tag">Classification</span>
+              <span class="skill-tag">Clustering</span>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="font-semibold text-white/90 mb-3">Professional Skills</h3>
+            <div class="flex flex-wrap gap-2">
+              <span class="skill-tag">Bias for Action</span>
+              <span class="skill-tag">Team Player</span>
+              <span class="skill-tag">Deliver Results</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Education -->
+    <div class="space-y-6">
+      <h2 class="text-2xl font-semibold text-white mb-8">Educational Background</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        {[
+          {
+            degree: "Post Graduate Diploma in Management",
+            school: "International School of Management Excellence",
+            period: "2015-2017",
+            details: "Specialization: Finance & Operations"
+          },
+          {
+            degree: "Bachelor of Technology",
+            school: "Silicon Institute of Technology",
+            period: "2010-2014",
+            details: "Stream: Mechanical Engineering"
+          }
+        ].map(edu => (
+          <div class="bg-white/5 backdrop-blur-sm rounded-lg p-6 border border-white/10 hover:border-[#4461f2]/50 transition-all duration-300">
+            <h3 class="text-lg font-semibold text-white/90 mb-2">{edu.degree}</h3>
+            <p class="text-white/70">{edu.school}</p>
+            <p class="text-white/50 text-sm">{edu.period}</p>
+            <p class="text-white/60 mt-2 text-sm">{edu.details}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</MainLayout>
+
+<style>
+  .animate-fadeIn {
+    animation: fadeIn 0.5s ease-in;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .skill-tag {
+    @apply px-3 py-1 bg-[#4461f2]/20 text-[#4461f2] rounded-full border border-[#4461f2]/20 
+           hover:bg-[#4461f2]/30 hover:border-[#4461f2]/30 transition-all duration-300
+           text-sm whitespace-nowrap;
+  }
+
+  /* Add animation for timeline items */
+  .group:hover .absolute::before {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+
+  .group {
+    opacity: 0;
+    animation: fadeInUp 0.5s ease-out forwards;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Add stagger effect to timeline items */
+  .group:nth-child(1) { animation-delay: 0.1s; }
+  .group:nth-child(2) { animation-delay: 0.3s; }
+  .group:nth-child(3) { animation-delay: 0.5s; }
+</style>

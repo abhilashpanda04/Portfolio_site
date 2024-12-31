@@ -1,0 +1,246 @@
+---
+import MainLayout from "../layout/MainLayout.astro";
+
+const projects = [
+  {
+    title: "Non-English Extraction Solution",
+    tech: ["Python", "Pandas", "Numpy", "Loguru", "Git", "BeautifulSoup"],
+    description: "End-to-end Non-English data extraction pipeline for Eikon, reducing processing time from 15 days to 40 minutes.",
+    highlights: [
+      "Reduced processing time from 15 days to 40 minutes",
+      "50% reduction in client cases",
+      "Extended to 40,000+ private companies",
+      "Implemented data cleaning & normalization"
+    ],
+    metrics: {
+      "Time Saved": "96%",
+      "Coverage": "40K+",
+      "Cost Reduction": "50%"
+    },
+    links: {
+      demo: "#", // Add if available
+      documentation: "#" // Add if available
+    }
+  },
+  {
+    title: "AI-based Ingestion Pipeline",
+    tech: ["FastAPI", "HuggingFace", "S-Bert", "PyTorch", "Azure"],
+    description: "Production-grade embedding-based pipeline for intelligent financial document processing.",
+    highlights: [
+      "Scaled across five high-volume markets",
+      "Processed 50K+ documents",
+      "Reduced manual review hours",
+      "Eliminated 10 FTE positions"
+    ],
+    metrics: {
+      "Documents": "50K+",
+      "Markets": "5",
+      "FTE Saved": "10"
+    },
+    links: {
+      demo: "#",
+      documentation: "#"
+    }
+  },
+  {
+    title: "Table Detection API",
+    tech: ["YOLO", "Ultralytics", "Ray", "CUDA", "FastAPI"],
+    description: "High-performance automated system for extracting tabular data from complex financial documents.",
+    highlights: [
+      "Processes 500 files daily",
+      "Saved 200K GBP in costs",
+      "Reduced 20 headcount positions",
+      "Fine-tuned YOLO for table detection"
+    ],
+    metrics: {
+      "Daily Files": "500",
+      "Cost Saved": "200K",
+      "Accuracy": "95%"
+    },
+    links: {
+      demo: "#",
+      documentation: "#"
+    }
+  }
+];
+
+const achievements = [
+  {
+    title: "5th position in PHD hackathon",
+    org: "INSOFE",
+    description: "Developed an innovative solution for [specific problem]",
+    year: "2022"
+  },
+  {
+    title: "Hall of fame Award",
+    org: "LSEG",
+    description: "Recognized for Non-English market automation",
+    year: "2023"
+  },
+  {
+    title: "Speaker",
+    org: "LSEG learning forum",
+    description: "Problem solving with Python programming language",
+    year: "2023"
+  }
+];
+
+const certifications = [
+  {
+    title: "Post Graduate programme in Data Science",
+    org: "INSOFE (Carnegie Mellon University, USA)",
+    date: "2021",
+    credential: "Credential ID: XXX-YYY"
+  },
+  "Lean Practitioner - State Street Global Advisory",
+  "Six Sigma Green Belt - KPMG"
+];
+---
+
+<MainLayout 
+  title="Projects - Abhilash Kumar Panda" 
+  seoTitle="Projects by Abhilash Kumar Panda" 
+  seoDesc="Portfolio of data science and ML projects">
+  
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 py-16">
+    <!-- Hero Section -->
+    <div class="text-center mb-16">
+      <h1 class="text-4xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-[#4461f2] to-[#bc52ee]">
+        Featured Projects
+      </h1>
+      <p class="text-lg text-white/70 max-w-2xl mx-auto">
+        A showcase of my work in machine learning, data science, and automation
+      </p>
+    </div>
+
+    <!-- Projects Grid -->
+    <div class="grid gap-8 mb-16">
+      {projects.map(project => (
+        <div class="group relative bg-white/5 backdrop-blur-lg rounded-xl overflow-hidden hover:bg-white/10 transition-all duration-300">
+          <div class="absolute inset-0 bg-gradient-to-r from-[#4461f2]/10 to-[#bc52ee]/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+          
+          <div class="relative p-8 border border-white/10 rounded-xl hover:border-[#4461f2]/50 transition-all duration-300">
+            <div class="md:grid md:grid-cols-3 gap-8">
+              <!-- Project Info -->
+              <div class="md:col-span-2 mb-6 md:mb-0">
+                <h3 class="text-2xl font-semibold text-white group-hover:text-[#4461f2] transition-colors mb-4">
+                  {project.title}
+                </h3>
+                
+                <div class="flex flex-wrap gap-2 mb-4">
+                  {project.tech.map(tech => (
+                    <span class="px-2 py-1 text-xs rounded-full bg-[#4461f2]/20 text-[#4461f2] border border-[#4461f2]/20">
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+
+                <p class="text-white/70 mb-6">{project.description}</p>
+
+                <div class="space-y-2">
+                  {project.highlights.map(highlight => (
+                    <p class="flex items-center text-sm text-white/60">
+                      <svg class="flex-shrink-0 h-5 w-5 text-[#4461f2] mr-2" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                      </svg>
+                      <span>{highlight}</span>
+                    </p>
+                  ))}
+                </div>
+              </div>
+
+              <!-- Metrics -->
+              <div class="md:col-span-1">
+                <div class="bg-white/5 rounded-lg p-6">
+                  <h4 class="text-sm font-semibold text-white/70 mb-4">Project Metrics</h4>
+                  <div class="space-y-4">
+                    {Object.entries(project.metrics).map(([key, value]) => (
+                      <div>
+                        <div class="text-2xl font-bold text-[#4461f2]">{value}</div>
+                        <div class="text-sm text-white/50">{key}</div>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div class="mt-6 flex gap-4">
+                    {Object.entries(project.links).map(([type, url]) => (
+                      <a href={url} 
+                         class="text-sm text-white/70 hover:text-white flex items-center gap-2 group">
+                        <span>{type}</span>
+                        <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" 
+                             fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                        </svg>
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Achievements & Certifications -->
+    <div class="grid gap-8 lg:grid-cols-2">
+      <!-- Achievements -->
+      <div class="bg-white/5 backdrop-blur-lg rounded-xl p-6 border border-white/10">
+        <h2 class="text-2xl font-bold text-white mb-6">Achievements</h2>
+        <div class="space-y-6">
+          {achievements.map(achievement => (
+            <div class="relative pl-6 before:absolute before:left-0 before:top-2 before:h-2 before:w-2 before:rounded-full before:bg-[#bc52ee]">
+              <h3 class="text-lg font-semibold text-white/90">{achievement.title}</h3>
+              <p class="text-sm text-white/50 mb-1">{achievement.org} | {achievement.year}</p>
+              <p class="text-white/70">{achievement.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Certifications -->
+      <div class="bg-white/5 backdrop-blur-lg rounded-xl p-6 border border-white/10">
+        <h2 class="text-2xl font-bold text-white mb-6">Certifications</h2>
+        <div class="space-y-6">
+          {certifications.map(cert => (
+            <div class="relative pl-6 before:absolute before:left-0 before:top-2 before:h-2 before:w-2 before:rounded-full before:bg-[#4461f2]">
+              <h3 class="text-lg font-semibold text-white/90">{cert.title}</h3>
+              <p class="text-sm text-white/50 mb-1">{cert.org}</p>
+              <p class="text-xs text-white/40">{cert.credential}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</MainLayout>
+
+<style>
+  /* Animate project cards on scroll */
+  .group {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.5s ease-out forwards;
+  }
+
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Add stagger effect */
+  .group:nth-child(1) { animation-delay: 0.1s; }
+  .group:nth-child(2) { animation-delay: 0.3s; }
+  .group:nth-child(3) { animation-delay: 0.5s; }
+
+  /* Smooth hover transitions */
+  .group {
+    transition: all 0.3s ease;
+  }
+  
+  .group:hover {
+    transform: translateY(-4px);
+  }
+</style>

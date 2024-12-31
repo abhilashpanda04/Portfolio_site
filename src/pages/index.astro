@@ -1,0 +1,169 @@
+---
+import MainLayout from "../layout/MainLayout.astro";
+const name = "Abhilash Kumar Panda";
+const role = "Senior Data Scientist";
+
+const stats = [
+  { value: "7.5+", label: "Years Experience" },
+  { value: "50K+", label: "Documents Processed" },
+  { value: "200K", label: "GBP Cost Savings" },
+  { value: "30+", label: "FTE Automated" }
+];
+
+const featuredProjects = [
+  {
+    title: "Non-English Extraction Solution",
+    tech: "Pandas | Numpy | Loguru | Git | Beautifulsoup",
+    description: "End-to-end Non-English data extraction pipeline for Eikon, with web scraping and data normalization capabilities.",
+    highlights: [
+      "Reduced processing time from 15 days to 40 minutes",
+      "50% reduction in client cases",
+      "Extended to 40,000+ private companies",
+      "Implemented data cleaning & normalization",
+      "Built complete pipeline from scratch"
+    ]
+  },
+  {
+    title: "AI-based Ingestion Pipeline",
+    tech: "FastAPI | HuggingFace | S-Bert",
+    description: "Production-grade embedding-based pipeline for intelligent financial document processing.",
+    highlights: [
+      "Scaled across five high-volume markets",
+      "Processed 50K+ documents",
+      "Reduced manual review hours",
+      "Automated quality checks",
+      "Eliminated 10 FTE positions"
+    ]
+  },
+  {
+    title: "Table Detection API",
+    tech: "YOLO | Ultralytics | Ray | CUDA",
+    description: "High-performance automated system for extracting tabular data from complex financial documents.",
+    highlights: [
+      "Processes 500 files daily",
+      "Saved 200K GBP in costs",
+      "Reduced 20 headcount positions",
+      "Fine-tuned YOLO for table detection",
+      "Integrated with Ray for scalability"
+    ]
+  }
+];
+---
+
+<MainLayout title="Abhilash Kumar Panda - Senior Data Scientist" 
+  seoTitle="Abhilash Kumar Panda's Portfolio" 
+  seoDesc="Senior Data Scientist specializing in ML, AI, and Data Analytics">
+  
+  <section class="relative min-h-[90vh] flex items-center py-20">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6">
+      <div class="lg:grid lg:grid-cols-12 lg:gap-8 items-center">
+        <div class="col-span-7">
+          <div class="relative">
+            <h1 class="text-4xl tracking-tight font-bold sm:text-5xl md:text-6xl mb-6">
+              <span class="block text-white/90">Hi, I'm</span>
+              <span class="block bg-clip-text text-transparent bg-gradient-to-r from-[#4461f2] to-[#bc52ee] mt-2">{name}</span>
+            </h1>
+            <p class="typewriter text-2xl text-white/70 mb-8">{role}</p>
+            <p class="text-lg text-white/60 leading-relaxed mb-8 max-w-2xl">
+              Accomplished Senior Data Scientist with expertise in capital markets and statistical modeling. 
+              Specializing in machine learning, LLMs, and MLOps to solve complex business challenges.
+            </p>
+            
+            <div class="flex flex-wrap gap-4 mb-12">
+              {stats.map(stat => (
+                <div class="bg-white/5 backdrop-blur-sm rounded-lg p-4 border border-white/10">
+                  <div class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#4461f2] to-[#bc52ee]">
+                    {stat.value}
+                  </div>
+                  <div class="text-sm text-white/60">{stat.label}</div>
+                </div>
+              ))}
+            </div>
+
+            <div class="flex gap-4">
+              <a href="/projects" 
+                 class="px-6 py-3 rounded-lg bg-gradient-to-r from-[#4461f2] to-[#bc52ee] text-white font-medium
+                        hover:opacity-90 transition-opacity">
+                View Projects
+              </a>
+              <a href="/about" 
+                 class="px-6 py-3 rounded-lg border border-white/10 text-white/90 font-medium
+                        hover:bg-white/5 transition-colors">
+                About Me
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="hidden lg:block col-span-5">
+          <!-- You could add an illustration or 3D model here -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 relative">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6">
+      <div class="flex items-center justify-between mb-12">
+        <h2 class="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#4461f2] to-[#bc52ee]">
+          Featured Projects
+        </h2>
+        <a href="/projects" class="text-white/70 hover:text-white transition-colors">
+          View All Projects →
+        </a>
+      </div>
+
+      <div class="grid gap-8 lg:grid-cols-3">
+        {featuredProjects.map(project => (
+          <div class="group bg-white/5 backdrop-blur-lg rounded-lg border border-white/10 overflow-hidden
+                      hover:border-[#4461f2]/50 transition-all duration-300 hover:-translate-y-1">
+            <div class="p-6">
+              <h3 class="text-xl font-semibold text-white mb-3 group-hover:text-[#4461f2] transition-colors">
+                {project.title}
+              </h3>
+              <p class="text-sm text-white/50 mb-4">{project.tech}</p>
+              <p class="text-white/70 mb-4 line-clamp-2">{project.description}</p>
+              <div class="mt-6 space-y-2">
+                {project.highlights.slice(0, 3).map(highlight => (
+                  <p class="flex items-center text-sm text-white/60">
+                    <svg class="flex-shrink-0 h-5 w-5 text-[#4461f2] mr-2" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    <span>{highlight}</span>
+                  </p>
+                ))}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</MainLayout>
+
+<style>
+  .typewriter {
+    border-right: 2px solid #4461f2;
+    animation: cursor 1s infinite step-end,
+               typing 3s steps(30);
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  @keyframes cursor {
+    50% { border-color: transparent; }
+  }
+
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+
+  /* Add hover effects to stat cards */
+  .bg-white\/5:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+    transform: translateY(-2px);
+    transition: all 0.3s ease;
+  }
+</style>
+
