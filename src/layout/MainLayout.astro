@@ -5,6 +5,14 @@ const { title, seoTitle, seoDesc } = Astro.props;
 
 // Add active page detection
 const currentPath = Astro.url.pathname;
+
+const baseUrl = import.meta.env.BASE_URL;
+
+const navLinks = [
+  { href: `${baseUrl}`, label: "Home" },
+  { href: `${baseUrl}about`, label: "About" },
+  { href: `${baseUrl}projects`, label: "Projects" }
+];
 ---
 
 <html lang="en" class="scroll-smooth">
@@ -24,25 +32,19 @@ const currentPath = Astro.url.pathname;
             
             <!-- Desktop Navigation -->
             <div class="hidden md:flex items-center ml-8">
-              {[
-                { href: "/", label: "Home" },
-                { href: "/about", label: "About" },
-                { href: "/projects", label: "Projects" }
-              ].map(({ href, label }) => (
+              {navLinks.map(({ href, label }) => (
                 <a href={href} 
-                   class:list={[
-                     "relative px-4 py-2 text-sm font-medium rounded-lg transition-all duration-300",
-                     "hover:text-white hover:bg-white/5",
-                     currentPath === href ? 
-                       "text-white after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-gradient-to-r after:from-[#4461f2] after:to-[#bc52ee]" : 
-                       "text-white/70"
-                   ]}>
+                  class:list={[
+                    "relative px-4 py-2 text-sm font-medium rounded-lg transition-all duration-300",
+                    "hover:text-white hover:bg-white/5",
+                    currentPath === href ? 
+                      "text-white after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-gradient-to-r after:from-[#4461f2] after:to-[#bc52ee]" : 
+                      "text-white/70"
+                  ]}>
                   {label}
                 </a>
               ))}
             </div>
-          </div>
-
           <!-- Social Links -->
           <div class="flex items-center space-x-1">
             <a href="https://github.com/abhilashpanda04" 
