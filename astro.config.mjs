@@ -5,7 +5,7 @@ import tailwind from '@astrojs/tailwind';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://abhilashpanda04.github.io',
-  base: '/Portfolio_site',
+  base: '/',
   integrations: [tailwind()],
   build: {
     assets: '_assets'  // This helps with asset paths
