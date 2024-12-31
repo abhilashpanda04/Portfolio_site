@@ -6,5 +6,8 @@ import tailwind from '@astrojs/tailwind';
 export default defineConfig({
   site: 'https://abhilashpanda04.github.io',
   base: '/Portfolio_site',
-  integrations: [tailwind()]
+  integrations: [tailwind()],
+  build: {
+    assets: '_assets'  // This helps with asset paths
+  }
 });
