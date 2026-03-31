@@ -16,7 +16,7 @@ const currentPath = Astro.url.pathname;
         <div class="flex justify-between h-16">
           <!-- Logo and Navigation -->
           <div class="flex items-center">
-            <a href={import.meta.env.BASE_URL}
+            <a href="/Portfolio_site/"
                class="group flex items-center space-x-2 text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#4461f2] via-[#7c8bff] to-[#bc52ee] hover:opacity-80 transition-all duration-300">
               <span class="tracking-tight">AKP</span>
               <div class="hidden sm:block h-2 w-2 rounded-full bg-[#4461f2] group-hover:bg-[#bc52ee] transition-colors"></div>
@@ -25,9 +25,9 @@ const currentPath = Astro.url.pathname;
             <!-- Desktop Navigation -->
             <div class="hidden md:flex items-center ml-8">
               {[
-                { href: import.meta.env.BASE_URL, label: "Home" },
-                { href: `${import.meta.env.BASE_URL}about`, label: "About" },
-                { href: `${import.meta.env.BASE_URL}projects`, label: "Projects" }
+                { href: "/Portfolio_site/", label: "Home" },
+                { href: "/Portfolio_site/about", label: "About" },
+                { href: "/Portfolio_site/projects", label: "Projects" }
               ].map(({ href, label }) => (
                 <a href={href} 
                    class:list={[
@@ -80,9 +80,9 @@ const currentPath = Astro.url.pathname;
       <div class="md:hidden" id="mobile-menu" hidden>
         <div class="px-2 pt-2 pb-3 space-y-1 bg-[#000212]/90 backdrop-blur-xl border-t border-white/5">
           {[
-            { href: import.meta.env.BASE_URL, label: "Home" },
-            { href: `${import.meta.env.BASE_URL}about`, label: "About" },
-            { href: `${import.meta.env.BASE_URL}projects`, label: "Projects" }
+            { href: "/Portfolio_site/", label: "Home" },
+            { href: "/Portfolio_site/about", label: "About" },
+            { href: "/Portfolio_site/projects", label: "Projects" }
           ].map(({ href, label }) => (
             <a href={href}
                class:list={[
