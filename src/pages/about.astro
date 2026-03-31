@@ -1,0 +1,283 @@
+---
+import MainLayout from "../layout/MainLayout.astro";
+---
+
+<MainLayout
+  title="About Abhilash Kumar Panda"
+  seoTitle="About Abhilash Kumar Panda | Senior Data Scientist"
+  seoDesc="9 years spanning financial markets operations and applied AI. The story of how pension fund reconciliation became the foundation for £600K+ in GenAI value.">
+
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 py-16">
+
+    <!-- ═══ ORIGIN STORY ═══ -->
+    <div class="mb-20">
+      <div class="flex items-center gap-3 mb-8">
+        <div class="h-px w-10 bg-gradient-to-r from-[#4461f2] to-transparent"></div>
+        <span class="text-xs font-mono text-[#4461f2]/50 uppercase tracking-[0.2em]">Origin Story</span>
+      </div>
+
+      <h1 class="text-4xl md:text-5xl font-bold mb-8 leading-tight">
+        <span class="text-white">Why financial AI</span><br/>
+        <span class="bg-clip-text text-transparent bg-gradient-to-r from-[#4461f2] to-[#bc52ee]">built by someone who lived it</span><br/>
+        <span class="text-white">works differently.</span>
+      </h1>
+
+      <div class="space-y-5 text-lg text-white/55 leading-relaxed max-w-3xl">
+        <p>
+          In 2017, I joined State Street Global Advisory as a Reconciliation Analyst. Every day: Bloomberg Terminal,
+          Refinitiv Eikon, SmartStream TLM. Reconciling 100+ managed pension fund portfolios — equities, derivatives,
+          FX, post-trade settlement, corporate actions. The grinding, precise, high-stakes work of institutional asset management.
+        </p>
+        <p>
+          Most people would see that as a detour before a "real" tech career. <span class="text-white/80">I see it as the most important
+          thing I ever did.</span> Because when I crossed over to data science at LSEG in 2019, I didn't just bring Python and
+          statistics — I brought an intimate understanding of the data I was now being asked to automate.
+        </p>
+        <p>
+          I knew why Korean regulatory filings were structured the way they were. I knew what made a broker report
+          ambiguous. I knew which edge cases would break a production system in the third month, not the third day.
+          <span class="text-white/80">That knowledge is not in any dataset. You get it by living inside the domain.</span>
+        </p>
+        <p>
+          Nine years in, £600K+ delivered, 55 FTEs automated across global financial workflows —
+          I'm looking for the next stage: <span class="text-white/80">Singapore's fintech and financial services ecosystem.</span>
+        </p>
+      </div>
+    </div>
+
+    <!-- ═══ MY UNFAIR ADVANTAGE ═══ -->
+    <div class="mb-20 p-7 rounded-2xl bg-gradient-to-br from-[#4461f2]/10 to-[#bc52ee]/8
+                border border-[#4461f2]/20 relative overflow-hidden">
+      <div class="absolute top-0 right-0 w-64 h-64 bg-[#bc52ee]/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+      <div class="relative">
+        <span class="text-xs font-mono text-[#4461f2]/60 uppercase tracking-[0.2em]">The edge</span>
+        <h2 class="text-2xl font-bold text-white mt-2 mb-6">My unfair advantage</h2>
+        <div class="grid sm:grid-cols-3 gap-6">
+          {[
+            {
+              icon: "◈",
+              title: "Domain-first",
+              desc: "I understand the financial instruments, workflows, and failure modes of the systems I'm automating — before a single line of code."
+            },
+            {
+              icon: "◇",
+              title: "Commercially accurate",
+              desc: "My AI systems are optimised for business outcomes, not benchmark scores. £600K+ in delivered value is the only benchmark that matters."
+            },
+            {
+              icon: "△",
+              title: "Full-stack AI",
+              desc: "From data extraction pipelines to agentic orchestration to LLM fine-tuning to LLMOps. I ship systems end-to-end."
+            }
+          ].map(a => (
+            <div>
+              <span class="text-2xl text-[#4461f2]/60">{a.icon}</span>
+              <h3 class="text-base font-semibold text-white mt-2 mb-1">{a.title}</h3>
+              <p class="text-sm text-white/50 leading-relaxed">{a.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ THREE CHAPTERS ═══ -->
+    <div class="mb-20">
+      <div class="flex items-center gap-4 mb-4">
+        <span class="text-xs font-mono text-white/25 uppercase tracking-[0.2em]">Career arc</span>
+        <div class="h-px flex-1 bg-white/5"></div>
+      </div>
+      <h2 class="text-2xl font-bold text-white mb-12">Three chapters</h2>
+
+      <div class="space-y-8 relative">
+        <div class="absolute left-[1.1rem] top-6 bottom-6 w-px bg-gradient-to-b from-amber-400/40 via-blue-400/40 to-purple-400/40 hidden md:block"></div>
+
+        <!-- Chapter 1 -->
+        <div class="md:pl-16 relative">
+          <div class="hidden md:flex absolute left-0 top-1 h-9 w-9 rounded-full border-2 border-amber-400/40 bg-amber-500/10
+                      items-center justify-center text-amber-400 text-xs font-bold">
+            I
+          </div>
+          <div class="mb-2 flex flex-wrap items-center gap-3">
+            <h3 class="text-xl font-semibold text-white">Reconciliation Analyst</h3>
+            <span class="px-2.5 py-0.5 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400/80 text-xs">Domain Foundation</span>
+          </div>
+          <p class="text-amber-400/60 text-sm mb-1">State Street Global Advisory · Bangalore · Feb 2017 – Oct 2019</p>
+          <p class="text-white/40 text-sm mb-4 italic">Learning the language of financial markets.</p>
+          <ul class="space-y-2.5">
+            {[
+              "Reconciled 100+ managed pension fund portfolios — equities, derivatives, FX — using Bloomberg Terminal, Refinitiv Eikon, and SmartStream TLM",
+              "Managed daily multi-currency position/cash reconciliation and corporate actions (M&A, dividends, tender offers)",
+              "Built PowerBI exception-trend dashboard for Portfolio Managers — the first AI-adjacent work, directly driven by frontline data pain",
+              "Deep institutional asset management expertise: cross-custodian workflows, post-trade settlement, regulatory reporting — this became the domain foundation for everything at LSEG"
+            ].map(item => (
+              <li class="flex items-start gap-2.5 text-sm text-white/55">
+                <svg class="flex-shrink-0 h-4 w-4 text-amber-400/60 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <!-- Chapter 2 -->
+        <div class="md:pl-16 relative">
+          <div class="hidden md:flex absolute left-0 top-1 h-9 w-9 rounded-full border-2 border-blue-400/40 bg-blue-500/10
+                      items-center justify-center text-blue-400 text-xs font-bold">
+            II
+          </div>
+          <div class="mb-2 flex flex-wrap items-center gap-3">
+            <h3 class="text-xl font-semibold text-white">Data Scientist</h3>
+            <span class="px-2.5 py-0.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400/80 text-xs">Applied ML</span>
+          </div>
+          <p class="text-blue-400/60 text-sm mb-1">London Stock Exchange Group · Bangalore · Nov 2019 – Oct 2022</p>
+          <p class="text-white/40 text-sm mb-4 italic">Turning domain knowledge into production ML pipelines.</p>
+          <ul class="space-y-2.5">
+            {[
+              "Korean regulatory filing extraction: 85%+ hit rate, £250K+ savings, 5 FTE reduction — processing cut from 15 days to 40 minutes across 130K+ documents",
+              "Hybrid ML + rule-based ingestion (cosine similarity, two-stage classification) across CA, IN, US, AU — saved 3 FTEs, cut out-of-scope data by 50%",
+              "Two-stage document intelligence pipeline (Azure Layout Model + Python rules) — expanded image-based document coverage from 0% to 64%, eliminating 5 FTEs"
+            ].map(item => (
+              <li class="flex items-start gap-2.5 text-sm text-white/55">
+                <svg class="flex-shrink-0 h-4 w-4 text-blue-400/60 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <!-- Chapter 3 -->
+        <div class="md:pl-16 relative">
+          <div class="hidden md:flex absolute left-0 top-1 h-9 w-9 rounded-full border-2 border-purple-400/40 bg-purple-500/10
+                      items-center justify-center text-purple-400 text-xs font-bold">
+            III
+          </div>
+          <div class="mb-2 flex flex-wrap items-center gap-3">
+            <h3 class="text-xl font-semibold text-white">Senior Data Scientist</h3>
+            <span class="px-2.5 py-0.5 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-400/80 text-xs">GenAI Leadership</span>
+          </div>
+          <p class="text-purple-400/60 text-sm mb-1">London Stock Exchange Group · Bangalore · Nov 2022 – Present</p>
+          <p class="text-white/40 text-sm mb-4 italic">Leading the shift from ML to GenAI — with financial domain embedded from the start.</p>
+          <ul class="space-y-2.5">
+            {[
+              "Built GenAI financial data extraction pipeline (meta-prompting, PydanticAI) — £350K+ savings and 50 FTE reduction",
+              "Developed context-aware RAG Answer Engine — source-referenced responses, session memory, optimised prompt design for analyst productivity",
+              "Led multi-agent AI PoC for financial document intelligence — earned regional executive endorsement",
+              "Mentored data scientists; translated financial domain knowledge into scalable AI pipelines"
+            ].map(item => (
+              <li class="flex items-start gap-2.5 text-sm text-white/55">
+                <svg class="flex-shrink-0 h-4 w-4 text-purple-400/60 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ TECHNICAL SKILLS ═══ -->
+    <div class="mb-20">
+      <div class="flex items-center gap-4 mb-4">
+        <span class="text-xs font-mono text-white/25 uppercase tracking-[0.2em]">Toolkit</span>
+        <div class="h-px flex-1 bg-white/5"></div>
+      </div>
+      <h2 class="text-2xl font-bold text-white mb-8">Technical skills</h2>
+
+      <div class="space-y-3">
+        {[
+          { label: "GenAI & Agents", skills: ["LangChain", "LangGraph", "Pydantic-AI", "MCP", "RAG", "Vector DB", "Agentic AI", "Prompt Engineering", "Context Engineering"] },
+          { label: "LLMs", skills: ["OpenAI GPT-4", "Gemini", "Claude", "LLaMA (fine-tuned)", "HuggingFace", "Unsloth", "vLLM", "LiteLLM"] },
+          { label: "ML / Deep Learning", skills: ["PyTorch", "TensorFlow", "Scikit-learn", "NLP", "Computer Vision", "Statistical Modeling", "BERT", "Transformers"] },
+          { label: "Cloud & LLMOps", skills: ["GCP", "Azure", "Azure Document Intelligence", "LLMOps", "CI/CD", "CML Pipelines", "MLflow", "ZenML", "DVC", "Docker"] },
+          { label: "Languages & APIs", skills: ["Python", "SQL", "FastAPI", "Flask"] }
+        ].map(cat => (
+          <div class="flex flex-wrap items-baseline gap-x-4 gap-y-2 py-3 border-b border-white/5">
+            <span class="text-xs font-semibold text-white/30 uppercase tracking-wider w-36 flex-shrink-0">{cat.label}</span>
+            <div class="flex flex-wrap gap-1.5">
+              {cat.skills.map(s => (
+                <span class="skill-pill">{s}</span>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- ═══ EDUCATION & CERTS ═══ -->
+    <div class="grid md:grid-cols-2 gap-8 mb-20">
+
+      <div>
+        <div class="flex items-center gap-4 mb-6">
+          <span class="text-xs font-mono text-white/25 uppercase tracking-[0.2em]">Education</span>
+          <div class="h-px flex-1 bg-white/5"></div>
+        </div>
+        <div class="space-y-4">
+          {[
+            { degree: "PG Diploma, Finance & Operations", school: "ISME, Bangalore", period: "2015 – 2017" },
+            { degree: "B.Tech, Mechanical Engineering", school: "Silicon Institute of Technology, Odisha", period: "2010 – 2014" }
+          ].map(edu => (
+            <div class="p-5 rounded-xl bg-white/5 border border-white/10 hover:border-white/20 transition-all">
+              <h3 class="text-sm font-semibold text-white/90">{edu.degree}</h3>
+              <p class="text-white/45 text-sm mt-1">{edu.school}</p>
+              <p class="text-white/25 text-xs mt-1 font-mono">{edu.period}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div>
+        <div class="flex items-center gap-4 mb-6">
+          <span class="text-xs font-mono text-white/25 uppercase tracking-[0.2em]">Certifications</span>
+          <div class="h-px flex-1 bg-white/5"></div>
+        </div>
+        <div class="space-y-3">
+          {[
+            { title: "PG Programme in Data Science", org: "INSOFE / Carnegie Mellon University", icon: "🎓" },
+            { title: "Machine Learning in Production", org: "Andrew Ng · Coursera", icon: "📚" },
+            { title: "Complete MCP Developer Guide", org: "Udemy", icon: "🔧" },
+            { title: "Six Sigma Green Belt", org: "KPMG", icon: "📊" }
+          ].map(cert => (
+            <div class="flex items-center gap-3 p-3.5 rounded-xl bg-white/5 border border-white/10 hover:border-white/20 transition-all">
+              <span class="text-lg">{cert.icon}</span>
+              <div>
+                <h3 class="text-sm font-semibold text-white/85">{cert.title}</h3>
+                <p class="text-xs text-white/35 mt-0.5">{cert.org}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ NEXT CHAPTER ═══ -->
+    <div class="p-7 rounded-2xl border border-emerald-500/20 bg-emerald-500/5">
+      <div class="flex items-start gap-3">
+        <span class="h-2 w-2 rounded-full bg-emerald-400 mt-2 flex-shrink-0 animate-pulse"></span>
+        <div>
+          <h2 class="text-lg font-semibold text-white mb-2">Open to opportunities</h2>
+          <p class="text-white/55 text-sm leading-relaxed mb-4">
+            Seeking senior IC and lead roles in Singapore's fintech and financial services ecosystem.
+            If you're building production AI in financial markets and want someone who actually understands both sides, let's talk.
+          </p>
+          <a href="mailto:abhilash.k.panda@gmail.com"
+             class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-gradient-to-r from-[#4461f2] to-[#bc52ee]
+                    text-white text-sm font-medium hover:opacity-90 transition-all">
+            abhilash.k.panda@gmail.com →
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</MainLayout>
+
+<style>
+  .skill-pill {
+    @apply px-2.5 py-1 text-xs rounded-lg bg-white/5 text-white/50 border border-white/10
+           hover:text-white/70 hover:border-white/20 transition-colors cursor-default;
+  }
+</style>
