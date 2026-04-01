@@ -7,342 +7,281 @@ import MainLayout from "../layout/MainLayout.astro";
   seoTitle="Abhilash Kumar Panda | Senior Data Scientist | GenAI & LLMOps"
   seoDesc="Senior Data Scientist specialising in GenAI, Agentic Systems, RAG, and LLMOps for financial services. £600K+ business value delivered at LSEG.">
 
-  <!-- ═══ ACT I: THE HOOK ═══ -->
-  <section class="relative min-h-screen flex items-center pt-20 pb-32 overflow-hidden">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 w-full">
+  <!-- ═══ HERO ═══ -->
+  <section class="hero-section relative min-h-screen flex items-center pt-20 pb-32 overflow-hidden">
+    <div class="ghost-text" aria-hidden="true">AI</div>
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 w-full relative z-10">
+      <div class="max-w-3xl">
 
-      <!-- Chapter marker -->
-      <div class="flex items-center gap-3 mb-10 fade-in" style="animation-delay: 0.1s">
-        <div class="h-px w-12 bg-gradient-to-r from-[#4461f2] to-transparent"></div>
-        <span class="text-xs font-mono text-[#4461f2]/60 uppercase tracking-[0.2em]">Senior Data Scientist · Bangalore → Singapore</span>
-      </div>
-
-      <!-- Main headline -->
-      <h1 class="fade-in" style="animation-delay: 0.2s">
-        <span class="block text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight text-white/90 leading-[1.05]">
-          Abhilash<br/>Kumar Panda
-        </span>
-      </h1>
-
-      <!-- Thesis statement -->
-      <p class="mt-8 text-xl sm:text-2xl text-white/50 font-light leading-relaxed max-w-2xl fade-in" style="animation-delay: 0.35s">
-        I spent two years inside institutional finance reconciling pension funds.<br class="hidden sm:block"/>
-        <span class="text-white/75">Most AI engineers would call that irrelevant experience.<br class="hidden sm:block"/>
-        I call it an unfair advantage.</span>
-      </p>
-
-      <!-- The thesis callout -->
-      <div class="mt-12 p-6 rounded-2xl bg-gradient-to-br from-[#4461f2]/10 to-[#bc52ee]/10
-                  border border-[#4461f2]/20 max-w-xl fade-in" style="animation-delay: 0.5s">
-        <div class="flex gap-4 items-start">
-          <div class="w-1 self-stretch rounded-full bg-gradient-to-b from-[#4461f2] to-[#bc52ee] flex-shrink-0"></div>
-          <p class="text-white/70 text-base leading-relaxed italic">
-            "AI systems in finance fail when they're built by engineers who've never lived inside financial markets.
-            I've done both — and that's the difference between AI that looks good in demos and AI that
-            <span class="text-white/90 not-italic font-medium">delivers £600K+ in production.</span>"
-          </p>
+        <div class="flex items-center gap-3 mb-10 fade-up" style="--d:0.1s">
+          <div class="h-px w-10 bg-gradient-to-r from-[#4461f2] to-transparent"></div>
+          <span class="font-mono text-xs text-[#4461f2]/60 uppercase tracking-[0.2em]">
+            Senior Data Scientist · Bangalore
+            <span class="inline-flex items-center ml-2">
+              <span class="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse mr-1"></span>
+              Open · Singapore
+            </span>
+          </span>
         </div>
-      </div>
 
-      <!-- Stats as proof points -->
-      <div class="mt-12 flex flex-wrap gap-3 fade-in" style="animation-delay: 0.65s">
-        {[
-          { value: "9+", label: "Years" },
-          { value: "£600K+", label: "Business value" },
-          { value: "55 FTEs", label: "Automated" },
-          { value: "130K+", label: "Docs processed" }
-        ].map(s => (
-          <div class="px-4 py-3 rounded-xl bg-white/5 border border-white/10 hover:border-[#4461f2]/30 transition-all group">
-            <span class="text-lg font-bold text-white group-hover:bg-clip-text group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-[#4461f2] group-hover:to-[#bc52ee] transition-all">{s.value}</span>
-            <span class="text-white/35 text-sm ml-2">{s.label}</span>
+        <h1 class="fade-up" style="--d:0.2s">
+          <span class="display-text block text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight text-white/90 leading-[1.05]">
+            Abhilash<br/>Kumar Panda
+          </span>
+        </h1>
+
+        <p class="mt-8 text-xl sm:text-2xl text-white/50 font-light leading-relaxed max-w-2xl fade-up" style="--d:0.35s">
+          I spent two years inside institutional finance reconciling pension funds.<br class="hidden sm:block"/>
+          <span class="text-white/80">Most AI engineers call that irrelevant.<br class="hidden sm:block"/>
+          I call it an unfair advantage.</span>
+        </p>
+
+        <div class="quote-card mt-12 p-6 rounded-2xl max-w-xl fade-up" style="--d:0.5s">
+          <div class="flex gap-4 items-start">
+            <div class="w-1 self-stretch rounded-full bg-gradient-to-b from-[#4461f2] to-[#bc52ee] flex-shrink-0"></div>
+            <p class="text-white/65 text-base leading-relaxed italic">
+              "AI systems in finance fail when built by engineers who've never lived inside financial markets.
+              I've done both — and that's the difference between AI that demos well and AI that
+              <span class="text-emerald-400 not-italic font-semibold">delivers £600K+ in production.</span>"
+            </p>
           </div>
-        ))}
+        </div>
+
+        <div class="mt-12 flex flex-wrap gap-3 fade-up" style="--d:0.65s">
+          <div class="stat-pill px-4 py-3 rounded-xl border border-white/10">
+            <span class="text-lg font-bold text-white font-mono" data-count-up data-target="9" data-prefix="" data-suffix="+">0+</span>
+            <span class="text-white/35 text-sm ml-1.5">Years exp.</span>
+          </div>
+          <div class="stat-pill px-4 py-3 rounded-xl border border-white/10">
+            <span class="text-lg font-bold text-emerald-400 font-mono" data-count-up data-target="600" data-prefix="£" data-suffix="K+">£0K+</span>
+            <span class="text-white/35 text-sm ml-1.5">Business value</span>
+          </div>
+          <div class="stat-pill px-4 py-3 rounded-xl border border-white/10">
+            <span class="text-lg font-bold text-white font-mono" data-count-up data-target="55" data-prefix="" data-suffix="">0</span>
+            <span class="text-white/35 text-sm ml-1.5">FTEs automated</span>
+          </div>
+          <div class="stat-pill px-4 py-3 rounded-xl border border-white/10">
+            <span class="text-lg font-bold text-white font-mono" data-count-up data-target="130" data-prefix="" data-suffix="K+">0K+</span>
+            <span class="text-white/35 text-sm ml-1.5">Docs processed</span>
+          </div>
+        </div>
+
+        <div class="mt-10 flex flex-wrap gap-4 fade-up" style="--d:0.8s">
+          <a href="/Portfolio_site/projects" class="btn-primary">See the work →</a>
+          <a href="/Portfolio_site/about"    class="btn-ghost">Read my story</a>
+          <a href="mailto:abhilash.k.panda@gmail.com" class="btn-link">Get in touch ↗</a>
+        </div>
+
       </div>
-
-      <!-- CTAs -->
-      <div class="mt-10 flex flex-wrap gap-4 fade-in" style="animation-delay: 0.8s">
-        <a href="/Portfolio_site/projects"
-           class="px-6 py-3 rounded-lg bg-gradient-to-r from-[#4461f2] to-[#bc52ee] text-white font-medium
-                  hover:opacity-90 hover:-translate-y-0.5 transition-all shadow-lg shadow-[#4461f2]/20">
-          See the work →
-        </a>
-        <a href="/Portfolio_site/about"
-           class="px-6 py-3 rounded-lg border border-white/10 text-white/70 font-medium
-                  hover:bg-white/5 hover:text-white hover:border-white/20 transition-all">
-          Read my story
-        </a>
-        <a href="mailto:abhilash.k.panda@gmail.com"
-           class="px-6 py-3 rounded-lg text-white/50 font-medium hover:text-white/80 transition-all">
-          Get in touch ↗
-        </a>
-      </div>
-
-    </div>
-
-    <!-- Decorative large background text -->
-    <div class="absolute right-0 top-1/2 -translate-y-1/2 text-[200px] font-black text-white/[0.015] select-none pointer-events-none leading-none hidden xl:block">
-      AI
     </div>
   </section>
 
-  <!-- ═══ ACT II: THE JOURNEY ═══ -->
-  <section class="py-24 border-t border-white/5 relative">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6">
+  <!-- ═══ JOURNEY ═══ -->
+  <section class="diagonal-section py-28 relative">
+    <div class="ghost-text-sm" aria-hidden="true">JOURNEY</div>
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 relative z-10">
 
-      <div class="flex items-center gap-4 mb-4">
-        <span class="text-xs font-mono text-white/25 uppercase tracking-[0.2em]">01 / The Journey</span>
-        <div class="h-px flex-1 bg-white/5"></div>
-      </div>
-      <h2 class="text-3xl font-bold text-white mb-3">From the desk to the model layer</h2>
-      <p class="text-white/45 mb-14 max-w-2xl">Three chapters. Each one built on the last.</p>
+      <div class="section-label">01 / The Journey</div>
+      <h2 class="display-text text-3xl font-bold text-white mb-3">From the desk to the model layer</h2>
+      <p class="text-white/40 mb-14 max-w-xl">Three chapters. Each one built on the last.</p>
 
       <div class="relative">
-        <!-- Connecting line -->
-        <div class="absolute left-8 top-8 bottom-8 w-px bg-gradient-to-b from-[#4461f2] via-[#8b5cf6] to-[#bc52ee] opacity-30 hidden md:block"></div>
-
+        <div class="timeline-spine hidden md:block absolute left-[1.1rem] top-8 w-px" style="height: calc(100% - 4rem)"></div>
         <div class="space-y-6">
 
-          <!-- Chapter 1 -->
-          <div class="journey-card group md:pl-20 relative">
-            <div class="hidden md:flex absolute left-4 top-6 h-8 w-8 rounded-full bg-[#000212] border-2 border-[#4461f2]/60
-                        items-center justify-center text-xs font-bold text-[#4461f2] group-hover:border-[#4461f2] transition-colors">
-              1
-            </div>
-            <div class="p-6 rounded-xl bg-white/5 border border-white/10 hover:border-[#4461f2]/30 transition-all duration-500 group-hover:bg-white/[0.07]">
+          <div class="journey-item md:pl-16 relative">
+            <div class="hidden md:flex absolute left-0 top-2 h-9 w-9 rounded-full border-2 border-amber-400/60 bg-amber-500/10 items-center justify-center text-xs font-bold text-amber-400">I</div>
+            <div class="p-6 rounded-xl bg-white/[0.03] border border-white/10 hover:border-amber-500/30 transition-all duration-300">
               <div class="flex flex-wrap items-start justify-between gap-2 mb-3">
                 <div>
-                  <span class="text-xs font-mono text-white/25 uppercase tracking-wider">Feb 2017 – Oct 2019</span>
+                  <span class="font-mono text-xs text-white/25 uppercase tracking-wider">Feb 2017 – Oct 2019</span>
                   <h3 class="text-lg font-semibold text-white mt-1">Reconciliation Analyst</h3>
-                  <p class="text-[#4461f2]/70 text-sm">State Street Global Advisory</p>
+                  <p class="text-sm text-white/40 mt-0.5">State Street Global Advisory</p>
                 </div>
-                <span class="px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400/80 text-xs font-medium">
-                  Domain Foundation
-                </span>
+                <span class="px-2.5 py-0.5 rounded-full border bg-amber-500/10 border-amber-500/20 text-amber-400/80 text-xs font-medium">Domain Foundation</span>
               </div>
-              <p class="text-white/50 text-sm leading-relaxed">
-                100+ pension fund portfolios. Bloomberg Terminal, Refinitiv Eikon, SmartStream TLM. Daily reconciliation of
-                equities, derivatives, and FX across global custodians. This wasn't background noise —
-                <span class="text-white/70">this became the domain knowledge that made every AI system at LSEG actually work.</span>
+              <p class="text-white/50 text-sm leading-relaxed mb-4">
+                100+ pension fund portfolios. Bloomberg Terminal, Refinitiv Eikon, SmartStream TLM. Daily reconciliation across equities, derivatives, and FX.
+                <span class="text-white/75"> This became the domain knowledge that made every AI system at LSEG actually work.</span>
               </p>
+              <ul class="space-y-2">
+                <li class="flex items-start gap-2 text-sm text-white/45"><svg class="flex-shrink-0 h-4 w-4 text-amber-400/50 mt-0.5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>100+ managed pension fund portfolios — equities, derivatives, FX, corporate actions (M&A, dividends)</li>
+                <li class="flex items-start gap-2 text-sm text-white/45"><svg class="flex-shrink-0 h-4 w-4 text-amber-400/50 mt-0.5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Built PowerBI exception-trend dashboard — frontline data pain that directly shaped LSEG AI automation</li>
+                <li class="flex items-start gap-2 text-sm text-white/45"><svg class="flex-shrink-0 h-4 w-4 text-amber-400/50 mt-0.5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Cross-custodian workflows, post-trade settlement, and regulatory reporting expertise</li>
+              </ul>
             </div>
           </div>
 
-          <!-- Chapter 2 -->
-          <div class="journey-card group md:pl-20 relative">
-            <div class="hidden md:flex absolute left-4 top-6 h-8 w-8 rounded-full bg-[#000212] border-2 border-[#7c8bff]/60
-                        items-center justify-center text-xs font-bold text-[#7c8bff] group-hover:border-[#7c8bff] transition-colors">
-              2
-            </div>
-            <div class="p-6 rounded-xl bg-white/5 border border-white/10 hover:border-[#7c8bff]/30 transition-all duration-500 group-hover:bg-white/[0.07]">
+          <div class="journey-item md:pl-16 relative">
+            <div class="hidden md:flex absolute left-0 top-2 h-9 w-9 rounded-full border-2 border-blue-400/60 bg-blue-500/10 items-center justify-center text-xs font-bold text-blue-400">II</div>
+            <div class="p-6 rounded-xl bg-white/[0.03] border border-white/10 hover:border-blue-500/30 transition-all duration-300">
               <div class="flex flex-wrap items-start justify-between gap-2 mb-3">
                 <div>
-                  <span class="text-xs font-mono text-white/25 uppercase tracking-wider">Nov 2019 – Oct 2022</span>
+                  <span class="font-mono text-xs text-white/25 uppercase tracking-wider">Nov 2019 – Oct 2022</span>
                   <h3 class="text-lg font-semibold text-white mt-1">Data Scientist</h3>
-                  <p class="text-[#7c8bff]/70 text-sm">London Stock Exchange Group</p>
+                  <p class="text-sm text-white/40 mt-0.5">London Stock Exchange Group</p>
                 </div>
-                <span class="px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400/80 text-xs font-medium">
-                  Applied ML
-                </span>
+                <span class="px-2.5 py-0.5 rounded-full border bg-blue-500/10 border-blue-500/20 text-blue-400/80 text-xs font-medium">Applied ML</span>
               </div>
-              <p class="text-white/50 text-sm leading-relaxed">
-                Turned domain expertise into real pipelines. Korean regulatory filings — 130K+ documents, processing cut from
-                15 days to 40 minutes, £250K+ saved. Azure Document Intelligence pipelines expanding coverage from 0% to 64%.
-                <span class="text-white/70">Proof that knowing the domain first makes better ML engineers.</span>
+              <p class="text-white/50 text-sm leading-relaxed mb-4">
+                Turned domain expertise into production ML pipelines. 130K+ documents, 15 days → 40 minutes, £250K+ saved.
+                <span class="text-white/75"> Proof that knowing the domain first makes better ML engineers.</span>
               </p>
+              <ul class="space-y-2">
+                <li class="flex items-start gap-2 text-sm text-white/45"><svg class="flex-shrink-0 h-4 w-4 text-blue-400/50 mt-0.5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Korean regulatory filing extraction: 85%+ hit rate, £250K+ savings, 5 FTE reduction, 130K+ documents</li>
+                <li class="flex items-start gap-2 text-sm text-white/45"><svg class="flex-shrink-0 h-4 w-4 text-blue-400/50 mt-0.5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Hybrid ML + rule-based ingestion across CA, IN, US, AU — 3 FTE saved, 50% out-of-scope reduction</li>
+                <li class="flex items-start gap-2 text-sm text-white/45"><svg class="flex-shrink-0 h-4 w-4 text-blue-400/50 mt-0.5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Azure Layout Model pipeline — image-based document coverage 0% → 64%, eliminating 5 FTEs</li>
+              </ul>
             </div>
           </div>
 
-          <!-- Chapter 3 -->
-          <div class="journey-card group md:pl-20 relative">
-            <div class="hidden md:flex absolute left-4 top-6 h-8 w-8 rounded-full bg-[#000212] border-2 border-[#bc52ee]/60
-                        items-center justify-center text-xs font-bold text-[#bc52ee] group-hover:border-[#bc52ee] transition-colors">
-              3
-            </div>
-            <div class="p-6 rounded-xl bg-white/5 border border-white/10 hover:border-[#bc52ee]/30 transition-all duration-500 group-hover:bg-white/[0.07]">
+          <div class="journey-item md:pl-16 relative">
+            <div class="hidden md:flex absolute left-0 top-2 h-9 w-9 rounded-full border-2 border-purple-400/60 bg-purple-500/10 items-center justify-center text-xs font-bold text-purple-400">III</div>
+            <div class="p-6 rounded-xl bg-white/[0.03] border border-white/10 hover:border-purple-500/30 transition-all duration-300">
               <div class="flex flex-wrap items-start justify-between gap-2 mb-3">
                 <div>
-                  <span class="text-xs font-mono text-white/25 uppercase tracking-wider">Nov 2022 – Present</span>
+                  <span class="font-mono text-xs text-white/25 uppercase tracking-wider">Nov 2022 – Present</span>
                   <h3 class="text-lg font-semibold text-white mt-1">Senior Data Scientist</h3>
-                  <p class="text-[#bc52ee]/70 text-sm">London Stock Exchange Group</p>
+                  <p class="text-sm text-white/40 mt-0.5">London Stock Exchange Group</p>
                 </div>
-                <span class="px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-400/80 text-xs font-medium">
-                  GenAI Leadership
-                </span>
+                <span class="px-2.5 py-0.5 rounded-full border bg-purple-500/10 border-purple-500/20 text-purple-400/80 text-xs font-medium">GenAI Leadership</span>
               </div>
-              <p class="text-white/50 text-sm leading-relaxed">
-                GenAI extraction pipelines (PydanticAI, meta-prompting), context-aware RAG engines, multi-agent PoC that earned
-                executive endorsement. £350K+ delivered. 50 FTE eliminated.
-                <span class="text-white/70">All of it commercially accurate because it was built with financial domain knowledge embedded from day one.</span>
+              <p class="text-white/50 text-sm leading-relaxed mb-4">
+                GenAI extraction pipelines, context-aware RAG, multi-agent PoC earning executive endorsement. £350K+ delivered.
+                <span class="text-white/75"> Commercially accurate because financial domain knowledge is embedded from day one.</span>
               </p>
+              <ul class="space-y-2">
+                <li class="flex items-start gap-2 text-sm text-white/45"><svg class="flex-shrink-0 h-4 w-4 text-purple-400/50 mt-0.5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>GenAI financial data extraction pipeline (meta-prompting, PydanticAI) — £350K+ savings, 50 FTE reduction</li>
+                <li class="flex items-start gap-2 text-sm text-white/45"><svg class="flex-shrink-0 h-4 w-4 text-purple-400/50 mt-0.5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Context-aware RAG Answer Engine with source-referenced responses and session memory for analysts</li>
+                <li class="flex items-start gap-2 text-sm text-white/45"><svg class="flex-shrink-0 h-4 w-4 text-purple-400/50 mt-0.5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Multi-agent AI PoC for financial document intelligence — earned regional executive endorsement</li>
+              </ul>
             </div>
           </div>
 
         </div>
-
-        <!-- Bridge / punchline -->
-        <div class="mt-10 pl-0 md:pl-20">
-          <a href="/Portfolio_site/about"
-             class="inline-flex items-center gap-2 text-sm text-white/40 hover:text-white/80 transition-colors group">
-            Read the full story
-            <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-            </svg>
+        <div class="mt-8 md:pl-16">
+          <a href="/Portfolio_site/about" class="inline-flex items-center gap-2 text-sm text-white/35 hover:text-white/70 transition-colors group">
+            Full story on About
+            <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
           </a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ═══ ACT III: THE PROOF ═══ -->
-  <section class="py-24 border-t border-white/5">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6">
+  <!-- ═══ PROOF ═══ -->
+  <section class="diagonal-section-alt py-28 relative">
+    <div class="ghost-text-sm" aria-hidden="true">WORK</div>
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 relative z-10">
 
-      <div class="flex items-center gap-4 mb-4">
-        <span class="text-xs font-mono text-white/25 uppercase tracking-[0.2em]">02 / The Proof</span>
-        <div class="h-px flex-1 bg-white/5"></div>
-      </div>
-      <h2 class="text-3xl font-bold text-white mb-3">What this looks like in production</h2>
-      <p class="text-white/45 mb-14 max-w-2xl">Not demos. Not prototypes. Systems running in global financial workflows.</p>
+      <div class="section-label">02 / The Proof</div>
+      <h2 class="display-text text-3xl font-bold text-white mb-3">What this looks like in production</h2>
+      <p class="text-white/40 mb-14 max-w-xl">Not demos. Systems running in global financial workflows.</p>
 
-      <div class="grid gap-6 lg:grid-cols-3">
-
-        {[
-          {
-            tag: "GenAI · Production",
-            title: "Financial Data Extraction Pipeline",
-            pull: "£350K+ saved. 50 FTEs automated.",
-            body: "Meta-prompting + PydanticAI for structured extraction from broker reports. High accuracy because the prompts were designed by someone who's read hundreds of these reports.",
-            tech: ["LangChain", "PydanticAI", "GPT-4", "Meta-prompting"],
-            color: "from-[#4461f2]"
-          },
-          {
-            tag: "RAG · Production",
-            title: "Context-Aware Answer Engine",
-            pull: "Source-referenced. Session memory. Built for analysts.",
-            body: "RAG system designed for financial analysts — not generic QA. Source-referenced responses because financial compliance demands it. Session memory because analysts work in multi-turn workflows.",
-            tech: ["RAG", "LangChain", "Vector DB", "Prompt Engineering"],
-            color: "from-[#7c8bff]"
-          },
-          {
-            tag: "LLMOps · Research",
-            title: "LLaMA 3.1 8B Fine-tuning",
-            pull: "~60% faster inference than standard PEFT.",
-            body: "Domain-adapted LLaMA 3.1 8B via Unsloth QLoRA. When you understand the financial documents you're fine-tuning on, the dataset quality is fundamentally different.",
-            tech: ["LLaMA 3.1", "Unsloth", "QLoRA", "HuggingFace"],
-            color: "from-[#bc52ee]"
-          }
-        ].map(p => (
-          <div class="group flex flex-col bg-white/5 rounded-xl border border-white/10
-                      hover:border-white/20 transition-all duration-500 hover:-translate-y-1 overflow-hidden">
-            <div class={`h-0.5 bg-gradient-to-r ${p.color} to-transparent`}></div>
-            <div class="p-6 flex flex-col flex-1">
-              <span class="text-xs font-mono text-white/30 uppercase tracking-wider mb-3">{p.tag}</span>
-              <h3 class="text-base font-semibold text-white mb-2 leading-snug group-hover:text-white/90">{p.title}</h3>
-              <p class="text-sm font-medium text-[#7c8bff]/80 mb-3">{p.pull}</p>
-              <p class="text-sm text-white/45 leading-relaxed flex-1">{p.body}</p>
-              <div class="flex flex-wrap gap-1.5 mt-5">
-                {p.tech.map(t => (
-                  <span class="px-2 py-0.5 text-xs rounded-md bg-white/5 text-white/40 border border-white/10">{t}</span>
-                ))}
-              </div>
+      <div class="grid gap-5 lg:grid-cols-3">
+        <div class="project-card group flex flex-col rounded-xl border border-white/10 overflow-hidden hover:border-white/20 transition-all duration-300 hover:-translate-y-1">
+          <div class="h-0.5 bg-gradient-to-r from-[#4461f2] to-transparent"></div>
+          <svg class="w-full h-5 px-5 pt-3 opacity-15" viewBox="0 0 200 24" preserveAspectRatio="none"><polyline points="0,20 40,15 70,18 100,6 140,10 170,3 200,6" fill="none" stroke="#4461f2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <div class="p-6 flex flex-col flex-1">
+            <span class="font-mono text-xs text-white/30 uppercase tracking-wider mb-3">GenAI · Production</span>
+            <h3 class="text-base font-semibold text-white mb-2 leading-snug">Financial Data Extraction Pipeline</h3>
+            <p class="text-sm font-semibold text-emerald-400 mb-3">£350K+ saved · 50 FTEs automated</p>
+            <p class="text-sm text-white/45 leading-relaxed flex-1">Meta-prompting + PydanticAI for structured extraction from broker reports. Accurate because the prompts were designed by someone who has read hundreds of these reports.</p>
+            <div class="flex flex-wrap gap-1.5 mt-5">
+              <span class="tech-tag">LangChain</span><span class="tech-tag">PydanticAI</span><span class="tech-tag">GPT-4</span><span class="tech-tag">Meta-prompting</span>
             </div>
           </div>
-        ))}
+        </div>
 
+        <div class="project-card group flex flex-col rounded-xl border border-white/10 overflow-hidden hover:border-white/20 transition-all duration-300 hover:-translate-y-1">
+          <div class="h-0.5 bg-gradient-to-r from-[#7c8bff] to-transparent"></div>
+          <svg class="w-full h-5 px-5 pt-3 opacity-15" viewBox="0 0 200 24" preserveAspectRatio="none"><polyline points="0,18 30,14 60,16 90,8 120,12 160,5 200,9" fill="none" stroke="#7c8bff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <div class="p-6 flex flex-col flex-1">
+            <span class="font-mono text-xs text-white/30 uppercase tracking-wider mb-3">RAG · Production</span>
+            <h3 class="text-base font-semibold text-white mb-2 leading-snug">Context-Aware Answer Engine</h3>
+            <p class="text-sm font-semibold text-[#7c8bff]/80 mb-3">Source-referenced · Session memory</p>
+            <p class="text-sm text-white/45 leading-relaxed flex-1">RAG for financial analysts — source-referenced for compliance auditability, session memory for multi-turn workflows, prompt design informed by actual analyst query patterns.</p>
+            <div class="flex flex-wrap gap-1.5 mt-5">
+              <span class="tech-tag">RAG</span><span class="tech-tag">LangChain</span><span class="tech-tag">Vector DB</span><span class="tech-tag">Prompt Eng.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card group flex flex-col rounded-xl border border-white/10 overflow-hidden hover:border-white/20 transition-all duration-300 hover:-translate-y-1">
+          <div class="h-0.5 bg-gradient-to-r from-[#bc52ee] to-transparent"></div>
+          <svg class="w-full h-5 px-5 pt-3 opacity-15" viewBox="0 0 200 24" preserveAspectRatio="none"><polyline points="0,22 50,16 80,19 110,9 150,13 180,4 200,7" fill="none" stroke="#bc52ee" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <div class="p-6 flex flex-col flex-1">
+            <span class="font-mono text-xs text-white/30 uppercase tracking-wider mb-3">LLMOps · Research</span>
+            <h3 class="text-base font-semibold text-white mb-2 leading-snug">LLaMA 3.1 8B Fine-tuning</h3>
+            <p class="text-sm font-semibold text-[#bc52ee]/80 mb-3">~60% faster than standard PEFT</p>
+            <p class="text-sm text-white/45 leading-relaxed flex-1">Domain-adapted via Unsloth QLoRA. Dataset quality was fundamentally different because the financial documents were understood, not just collected.</p>
+            <div class="flex flex-wrap gap-1.5 mt-5">
+              <span class="tech-tag">LLaMA 3.1</span><span class="tech-tag">Unsloth</span><span class="tech-tag">QLoRA</span><span class="tech-tag">HuggingFace</span>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div class="mt-8 text-center">
-        <a href="/Portfolio_site/projects"
-           class="inline-flex items-center gap-2 text-sm text-white/40 hover:text-white/80 transition-colors group">
-          See all projects including MLOps, BERT pre-training, Chrome extensions
-          <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-          </svg>
+        <a href="/Portfolio_site/projects" class="inline-flex items-center gap-2 text-sm text-white/35 hover:text-white/70 transition-colors group">
+          All 6 production projects + personal work
+          <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
         </a>
       </div>
     </div>
   </section>
 
-  <!-- ═══ THE TOOLKIT ═══ -->
-  <section class="py-24 border-t border-white/5">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6">
+  <!-- ═══ TOOLKIT ═══ -->
+  <section class="diagonal-section py-28 relative">
+    <div class="hex-grid-bg absolute inset-0 pointer-events-none" aria-hidden="true"></div>
+    <div class="ghost-text-sm" aria-hidden="true">TOOLS</div>
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 relative z-10">
 
-      <div class="flex items-center gap-4 mb-4">
-        <span class="text-xs font-mono text-white/25 uppercase tracking-[0.2em]">03 / The Toolkit</span>
-        <div class="h-px flex-1 bg-white/5"></div>
-      </div>
-      <h2 class="text-3xl font-bold text-white mb-3">What I work with</h2>
-      <p class="text-white/45 mb-14 max-w-2xl">
-        Accumulated across 9 years. Tools selected for production — not benchmarks.
-      </p>
+      <div class="section-label">03 / The Toolkit</div>
+      <h2 class="display-text text-3xl font-bold text-white mb-3">What I work with</h2>
+      <p class="text-white/40 mb-14 max-w-xl">9 years of tools — selected for production, not benchmarks.</p>
 
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        {[
-          {
-            icon: "◈",
-            label: "GenAI & Agents",
-            skills: ["LangChain", "LangGraph", "Pydantic-AI", "MCP", "RAG", "Vector DB", "Agentic AI"]
-          },
-          {
-            icon: "◇",
-            label: "LLMs",
-            skills: ["GPT-4", "Gemini", "Claude", "LLaMA", "HuggingFace", "Unsloth", "vLLM"]
-          },
-          {
-            icon: "△",
-            label: "ML / Deep Learning",
-            skills: ["PyTorch", "TensorFlow", "Scikit-learn", "NLP", "Computer Vision", "BERT"]
-          },
-          {
-            icon: "○",
-            label: "Cloud & LLMOps",
-            skills: ["GCP", "Azure", "Azure Doc Intelligence", "LLMOps", "CI/CD", "MLflow", "ZenML"]
-          }
-        ].map(cat => (
-          <div class="p-5 rounded-xl bg-white/5 border border-white/10 hover:border-[#4461f2]/25 transition-all duration-300">
-            <div class="flex items-center gap-2 mb-4">
-              <span class="text-[#4461f2]/60 text-lg font-light">{cat.icon}</span>
-              <h3 class="text-xs font-semibold text-white/55 uppercase tracking-wider">{cat.label}</h3>
-            </div>
-            <div class="flex flex-wrap gap-1.5">
-              {cat.skills.map(s => (
-                <span class="px-2 py-1 text-xs rounded-lg bg-white/5 text-white/50 border border-white/10 hover:text-white/70 hover:border-white/20 transition-colors cursor-default">
-                  {s}
-                </span>
-              ))}
-            </div>
+        <div class="p-5 rounded-xl bg-white/[0.03] border border-white/10 hover:border-[#4461f2]/25 transition-all duration-300">
+          <div class="flex items-center gap-2 mb-4"><span class="text-[#4461f2]/50 text-xl">◈</span><h3 class="text-xs font-semibold text-white/45 uppercase tracking-wider">GenAI & Agents</h3></div>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="skill-w3">LangChain</span><span class="skill-w3">LangGraph</span><span class="skill-w3">Pydantic-AI</span><span class="skill-w2">MCP</span><span class="skill-w3">RAG</span><span class="skill-w2">Vector DB</span><span class="skill-w3">Agentic AI</span>
           </div>
-        ))}
+        </div>
+        <div class="p-5 rounded-xl bg-white/[0.03] border border-white/10 hover:border-[#4461f2]/25 transition-all duration-300">
+          <div class="flex items-center gap-2 mb-4"><span class="text-[#4461f2]/50 text-xl">◇</span><h3 class="text-xs font-semibold text-white/45 uppercase tracking-wider">LLMs</h3></div>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="skill-w3">GPT-4</span><span class="skill-w2">Gemini</span><span class="skill-w2">Claude</span><span class="skill-w3">LLaMA</span><span class="skill-w2">HuggingFace</span><span class="skill-w2">Unsloth</span><span class="skill-w1">vLLM</span>
+          </div>
+        </div>
+        <div class="p-5 rounded-xl bg-white/[0.03] border border-white/10 hover:border-[#4461f2]/25 transition-all duration-300">
+          <div class="flex items-center gap-2 mb-4"><span class="text-[#4461f2]/50 text-xl">△</span><h3 class="text-xs font-semibold text-white/45 uppercase tracking-wider">ML / Deep Learning</h3></div>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="skill-w3">PyTorch</span><span class="skill-w2">TensorFlow</span><span class="skill-w3">Scikit-learn</span><span class="skill-w3">NLP</span><span class="skill-w2">Computer Vision</span><span class="skill-w2">BERT</span>
+          </div>
+        </div>
+        <div class="p-5 rounded-xl bg-white/[0.03] border border-white/10 hover:border-[#4461f2]/25 transition-all duration-300">
+          <div class="flex items-center gap-2 mb-4"><span class="text-[#4461f2]/50 text-xl">○</span><h3 class="text-xs font-semibold text-white/45 uppercase tracking-wider">Cloud & LLMOps</h3></div>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="skill-w2">GCP</span><span class="skill-w3">Azure</span><span class="skill-w2">Azure Doc Intel</span><span class="skill-w3">LLMOps</span><span class="skill-w2">CI/CD</span><span class="skill-w2">MLflow</span><span class="skill-w2">ZenML</span>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ═══ THE ASK ═══ -->
-  <section class="py-24 border-t border-white/5">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6">
+  <!-- ═══ NEXT ═══ -->
+  <section class="py-28 relative">
+    <div class="ghost-text-sm" aria-hidden="true">NEXT</div>
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 relative z-10">
       <div class="max-w-2xl">
-        <div class="flex items-center gap-4 mb-4">
-          <span class="text-xs font-mono text-white/25 uppercase tracking-[0.2em]">04 / What's next</span>
-          <div class="h-px flex-1 bg-white/5"></div>
-        </div>
-        <h2 class="text-3xl font-bold text-white mb-4">Seeking my next chapter</h2>
-        <p class="text-white/50 leading-relaxed mb-2">
-          Nine years in, I'm looking to bring this combination of financial domain knowledge and GenAI engineering to
-          Singapore's world-class fintech and financial services ecosystem.
-        </p>
-        <p class="text-white/50 leading-relaxed mb-10">
-          Senior IC roles, lead positions, or advisory engagements where deep financial AI expertise matters.
-        </p>
+        <div class="section-label">04 / What's Next</div>
+        <h2 class="display-text text-3xl font-bold text-white mb-4">Seeking my next chapter</h2>
+        <p class="text-white/50 leading-relaxed mb-2">Nine years in. Looking to bring financial AI expertise to Singapore's fintech ecosystem.</p>
+        <p class="text-white/50 leading-relaxed mb-10">Senior IC roles, lead positions, advisory engagements where deep financial AI expertise matters.</p>
         <div class="flex flex-wrap gap-4">
-          <a href="mailto:abhilash.k.panda@gmail.com"
-             class="px-7 py-3.5 rounded-lg bg-gradient-to-r from-[#4461f2] to-[#bc52ee] text-white font-medium
-                    hover:opacity-90 hover:-translate-y-0.5 transition-all shadow-lg shadow-[#4461f2]/20">
-            abhilash.k.panda@gmail.com
-          </a>
-          <a href="https://linkedin.com/in/abhilash-k-panda" target="_blank" rel="noopener noreferrer"
-             class="px-7 py-3.5 rounded-lg border border-white/10 text-white/70 font-medium hover:bg-white/5 hover:text-white transition-all">
-            LinkedIn ↗
-          </a>
+          <a href="mailto:abhilash.k.panda@gmail.com" class="btn-primary">abhilash.k.panda@gmail.com</a>
+          <a href="https://linkedin.com/in/abhilash-k-panda" target="_blank" rel="noopener noreferrer" class="btn-ghost">LinkedIn ↗</a>
         </div>
       </div>
     </div>
@@ -351,22 +290,129 @@ import MainLayout from "../layout/MainLayout.astro";
 </MainLayout>
 
 <style>
-  .fade-in {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 0.7s ease-out forwards;
+  .display-text { font-family: 'Space Grotesk', sans-serif; }
+
+  .ghost-text {
+    position: absolute; right: -2rem; top: 50%; transform: translateY(-50%);
+    font-family: 'Space Grotesk', sans-serif; font-size: clamp(8rem, 20vw, 18rem); font-weight: 800;
+    color: transparent; -webkit-text-stroke: 1px rgba(68,97,242,0.055);
+    pointer-events: none; user-select: none; white-space: nowrap; z-index: 0;
+  }
+  .ghost-text-sm {
+    position: absolute; right: 1rem; top: 3rem;
+    font-family: 'Space Grotesk', sans-serif; font-size: clamp(4rem, 10vw, 9rem); font-weight: 800;
+    color: transparent; -webkit-text-stroke: 1px rgba(68,97,242,0.04);
+    pointer-events: none; user-select: none; white-space: nowrap; z-index: 0;
   }
 
-  @keyframes fadeInUp {
-    to { opacity: 1; transform: translateY(0); }
+  .section-label {
+    font-family: monospace; font-size: 0.7rem; color: rgba(255,255,255,0.2);
+    text-transform: uppercase; letter-spacing: 0.2em; margin-bottom: 0.75rem;
   }
 
-  .journey-card {
-    opacity: 0;
-    animation: fadeInUp 0.6s ease-out forwards;
+  .diagonal-section {
+    clip-path: polygon(0 2.5%, 100% 0%, 100% 97.5%, 0% 100%);
+    background: rgba(255,255,255,0.012); margin: -1.5rem 0;
+    padding-top: calc(3rem + 4vw) !important; padding-bottom: calc(3rem + 4vw) !important;
+  }
+  .diagonal-section-alt {
+    clip-path: polygon(0 0%, 100% 2.5%, 100% 100%, 0% 97.5%);
+    background: rgba(68,97,242,0.018); margin: -1.5rem 0;
+    padding-top: calc(3rem + 4vw) !important; padding-bottom: calc(3rem + 4vw) !important;
   }
 
-  .journey-card:nth-child(1) { animation-delay: 0.1s; }
-  .journey-card:nth-child(2) { animation-delay: 0.25s; }
-  .journey-card:nth-child(3) { animation-delay: 0.4s; }
+  .hex-grid-bg {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='100'%3E%3Cpath d='M28 66L0 50V16L28 0l28 16v34z' fill='none' stroke='rgba(68,97,242,0.07)' stroke-width='1'/%3E%3Cpath d='M28 100L0 84V50l28-16 28 16v34z' fill='none' stroke='rgba(68,97,242,0.07)' stroke-width='1'/%3E%3C/svg%3E");
+  }
+
+  .timeline-spine {
+    background: linear-gradient(to bottom, #f59e0b66, #4461f266, #bc52ee66);
+    transform-origin: top; animation: drawSpine 1.4s ease-out 0.2s both;
+  }
+  @keyframes drawSpine { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+
+  .journey-item { opacity: 0; animation: riseUp 0.55s ease-out forwards; }
+  .journey-item:nth-child(1) { animation-delay: 0.15s; }
+  .journey-item:nth-child(2) { animation-delay: 0.3s; }
+  .journey-item:nth-child(3) { animation-delay: 0.45s; }
+
+  .project-card { background: rgba(255,255,255,0.025); }
+  .stat-pill { background: rgba(255,255,255,0.04); }
+
+  .skill-w3, .skill-w2, .skill-w1 {
+    padding: 0.2rem 0.5rem; border-radius: 0.4rem;
+    background: rgba(68,97,242,0.1); border: 1px solid rgba(68,97,242,0.15);
+    color: rgba(124,139,255,0.75); transition: all 0.2s; cursor: default;
+  }
+  .skill-w3 { font-size: 0.8rem; color: rgba(124,139,255,0.9); background: rgba(68,97,242,0.14); }
+  .skill-w2 { font-size: 0.72rem; }
+  .skill-w1 { font-size: 0.65rem; opacity: 0.65; }
+  .skill-w3:hover, .skill-w2:hover, .skill-w1:hover { background: rgba(68,97,242,0.22); color: rgba(180,190,255,1); }
+
+  .tech-tag {
+    padding: 0.125rem 0.5rem; font-size: 0.7rem; border-radius: 0.375rem;
+    background: rgba(255,255,255,0.05); color: rgba(255,255,255,0.4); border: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .btn-primary {
+    display: inline-flex; align-items: center;
+    padding: 0.75rem 1.5rem; border-radius: 0.5rem;
+    background: linear-gradient(135deg, #4461f2, #bc52ee);
+    color: white; font-weight: 500; position: relative; overflow: hidden;
+    transition: opacity 0.2s, transform 0.2s;
+    box-shadow: 0 4px 24px rgba(68,97,242,0.25);
+  }
+  .btn-primary::after {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+    transform: translateX(-100%); transition: transform 0.5s ease;
+  }
+  .btn-primary:hover::after { transform: translateX(100%); }
+  .btn-primary:hover { opacity: 0.92; transform: translateY(-1px); }
+
+  .btn-ghost {
+    display: inline-flex; align-items: center;
+    padding: 0.75rem 1.5rem; border-radius: 0.5rem;
+    border: 1px solid rgba(255,255,255,0.1); color: rgba(255,255,255,0.7); font-weight: 500;
+    transition: all 0.2s;
+  }
+  .btn-ghost:hover { background: rgba(255,255,255,0.05); color: white; border-color: rgba(255,255,255,0.2); }
+
+  .btn-link {
+    display: inline-flex; align-items: center;
+    padding: 0.75rem 1rem; color: rgba(255,255,255,0.4); font-weight: 500; transition: color 0.2s;
+  }
+  .btn-link:hover { color: rgba(255,255,255,0.8); }
+
+  .quote-card {
+    background: linear-gradient(135deg, rgba(68,97,242,0.08), rgba(188,82,238,0.05));
+    border: 1px solid rgba(68,97,242,0.2);
+  }
+
+  .fade-up {
+    opacity: 0; transform: translateY(18px);
+    animation: riseUp 0.65s ease-out var(--d, 0s) both;
+  }
+  @keyframes riseUp { to { opacity: 1; transform: translateY(0); } }
 </style>
+
+<script>
+  function countUp(el: HTMLElement) {
+    const target = parseInt(el.dataset.target || '0');
+    const prefix = el.dataset.prefix || '';
+    const suffix = el.dataset.suffix || '';
+    const duration = 1500;
+    const start = performance.now();
+    function tick(now: number) {
+      const p = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - p, 3);
+      el.textContent = prefix + Math.round(eased * target) + suffix;
+      if (p < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { countUp(e.target as HTMLElement); obs.unobserve(e.target); } });
+  }, { threshold: 0.5 });
+  document.querySelectorAll('[data-count-up]').forEach(el => obs.observe(el));
+</script>
