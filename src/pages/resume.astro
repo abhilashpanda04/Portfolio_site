@@ -1,0 +1,103 @@
+---
+import MainLayout from "../layout/MainLayout.astro";
+---
+
+<MainLayout
+  title="Resume — Abhilash Kumar Panda"
+  seoTitle="Resume of Abhilash Kumar Panda | Senior Data Scientist"
+  seoDesc="Download the resume of Abhilash Kumar Panda — Senior Data Scientist specialising in GenAI, Agentic Systems, RAG, and LLMOps for financial services.">
+
+  <!-- ═══ RESUME ═══ -->
+  <section class="relative min-h-screen pt-20 pb-32">
+    <div class="ghost-text" aria-hidden="true">CV</div>
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 w-full relative z-10">
+
+      <!-- Header -->
+      <div class="flex items-center gap-3 mb-6 fade-up" style="--d:0.1s">
+        <div class="h-px w-10 bg-gradient-to-r from-[#4461f2] to-transparent"></div>
+        <span class="font-mono text-xs text-[#4461f2]/60 uppercase tracking-[0.2em]">Download & View</span>
+      </div>
+
+      <h1 class="text-4xl md:text-5xl font-bold mb-4 leading-tight fade-up" style="--d:0.2s">
+        <span class="display-text block text-white/90">Resume</span>
+      </h1>
+      <p class="text-lg text-white/50 mb-10 max-w-2xl fade-up" style="--d:0.3s">
+        Senior Data Scientist with 9 years of experience spanning financial markets operations and applied AI.
+        GenAI, Agentic Systems, RAG, and LLMOps — delivering real business value.
+      </p>
+
+      <!-- Action Buttons -->
+      <div class="flex flex-wrap gap-4 mb-12 fade-up" style="--d:0.4s">
+        <a href="/Portfolio_site/resume.pdf" download class="btn-primary">
+          <svg class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+          </svg>
+          Download PDF
+        </a>
+        <a href="/Portfolio_site/resume.pdf" target="_blank" class="btn-ghost">Open in new tab ↗</a>
+      </div>
+
+      <!-- PDF Viewer -->
+      <div class="pdf-container fade-up rounded-2xl overflow-hidden border border-white/10" style="--d:0.5s">
+        <iframe
+          src="/Portfolio_site/resume.pdf#toolbar=0&navpanes=0"
+          class="w-full rounded-2xl"
+          style="min-height: 85vh; border: none;"
+          title="Abhilash Kumar Panda — Resume"
+        >
+          <p class="text-white/50 p-8 text-center">
+            Your browser does not support embedded PDFs.
+            <a href="/Portfolio_site/resume.pdf" download class="text-[#4461f2] hover:underline">Download the resume instead.</a>
+          </p>
+        </iframe>
+      </div>
+
+    </div>
+  </section>
+
+</MainLayout>
+
+<style>
+  .display-text { font-family: 'Space Grotesk', sans-serif; }
+
+  .ghost-text {
+    position: absolute; right: -2rem; top: 50%; transform: translateY(-50%);
+    font-family: 'Space Grotesk', sans-serif; font-size: clamp(8rem, 20vw, 18rem); font-weight: 800;
+    color: transparent; -webkit-text-stroke: 1px rgba(68,97,242,0.055);
+    pointer-events: none; user-select: none; white-space: nowrap; z-index: 0;
+  }
+
+  .btn-primary {
+    display: inline-flex; align-items: center;
+    padding: 0.75rem 1.5rem; border-radius: 0.5rem;
+    background: linear-gradient(135deg, #4461f2, #bc52ee);
+    color: white; font-weight: 500; position: relative; overflow: hidden;
+    transition: opacity 0.2s, transform 0.2s;
+    box-shadow: 0 4px 24px rgba(68,97,242,0.25);
+  }
+  .btn-primary::after {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+    transform: translateX(-100%); transition: transform 0.5s ease;
+  }
+  .btn-primary:hover::after { transform: translateX(100%); }
+  .btn-primary:hover { opacity: 0.92; transform: translateY(-1px); }
+
+  .btn-ghost {
+    display: inline-flex; align-items: center;
+    padding: 0.75rem 1.5rem; border-radius: 0.5rem;
+    border: 1px solid rgba(255,255,255,0.1); color: rgba(255,255,255,0.7); font-weight: 500;
+    transition: all 0.2s;
+  }
+  .btn-ghost:hover { background: rgba(255,255,255,0.05); color: white; border-color: rgba(255,255,255,0.2); }
+
+  .pdf-container {
+    box-shadow: 0 0 40px rgba(68,97,242,0.08);
+  }
+
+  .fade-up {
+    opacity: 0; transform: translateY(18px);
+    animation: riseUp 0.65s ease-out var(--d, 0s) both;
+  }
+  @keyframes riseUp { to { opacity: 1; transform: translateY(0); } }
+</style>

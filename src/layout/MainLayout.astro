@@ -27,7 +27,8 @@ const currentPath = Astro.url.pathname;
               {[
                 { href: "/Portfolio_site/", label: "Home" },
                 { href: "/Portfolio_site/about", label: "About" },
-                { href: "/Portfolio_site/projects", label: "Projects" }
+                { href: "/Portfolio_site/projects", label: "Projects" },
+                { href: "/Portfolio_site/resume", label: "Resume" }
               ].map(({ href, label }) => (
                 <a href={href} 
                    class:list={[
@@ -82,7 +83,8 @@ const currentPath = Astro.url.pathname;
           {[
             { href: "/Portfolio_site/", label: "Home" },
             { href: "/Portfolio_site/about", label: "About" },
-            { href: "/Portfolio_site/projects", label: "Projects" }
+            { href: "/Portfolio_site/projects", label: "Projects" },
+            { href: "/Portfolio_site/resume", label: "Resume" }
           ].map(({ href, label }) => (
             <a href={href}
                class:list={[
