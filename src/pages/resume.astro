@@ -21,13 +21,19 @@ import MainLayout from "../layout/MainLayout.astro";
       <h1 class="text-4xl md:text-5xl font-bold mb-4 leading-tight fade-up" style="--d:0.2s">
         <span class="display-text block text-white/90">Resume</span>
       </h1>
-      <p class="text-lg text-white/50 mb-10 max-w-2xl fade-up" style="--d:0.3s">
-        Senior Data Scientist with 9 years of experience spanning financial markets operations and applied AI.
-        GenAI, Agentic Systems, RAG, and LLMOps — delivering real business value.
-      </p>
+
+      <!-- Tab Switcher -->
+      <div class="flex gap-1 mb-8 fade-up" style="--d:0.25s">
+        <button id="tab-general" class="tab-btn tab-active" onclick="switchTab('general')">
+          General
+        </button>
+        <button id="tab-lseg" class="tab-btn" onclick="switchTab('lseg')">
+          LSEG
+        </button>
+      </div>
 
       <!-- Action Buttons -->
-      <div class="flex flex-wrap gap-4 mb-12 fade-up" style="--d:0.4s">
+      <div class="flex flex-wrap gap-4 mb-10 fade-up" id="actions-general" style="--d:0.3s">
         <a href="/Portfolio_site/resume.pdf" download class="btn-primary">
           <svg class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
@@ -37,17 +43,42 @@ import MainLayout from "../layout/MainLayout.astro";
         <a href="/Portfolio_site/resume.pdf" target="_blank" class="btn-ghost">Open in new tab ↗</a>
       </div>
 
-      <!-- PDF Viewer -->
-      <div class="pdf-container fade-up rounded-2xl overflow-hidden border border-white/10" style="--d:0.5s">
+      <div class="flex flex-wrap gap-4 mb-10 fade-up hidden" id="actions-lseg" style="--d:0.3s">
+        <a href="/Portfolio_site/lseg_resume.pdf" download class="btn-primary">
+          <svg class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+          </svg>
+          Download LSEG Resume
+        </a>
+        <a href="/Portfolio_site/lseg_resume.pdf" target="_blank" class="btn-ghost">Open in new tab ↗</a>
+      </div>
+
+      <!-- PDF Viewer: General -->
+      <div class="pdf-container fade-up rounded-2xl overflow-hidden border border-white/10" id="viewer-general" style="--d:0.4s">
         <iframe
           src="/Portfolio_site/resume.pdf#toolbar=0&navpanes=0"
           class="w-full rounded-2xl"
           style="min-height: 85vh; border: none;"
-          title="Abhilash Kumar Panda — Resume"
+          title="Abhilash Kumar Panda — General Resume"
         >
           <p class="text-white/50 p-8 text-center">
             Your browser does not support embedded PDFs.
             <a href="/Portfolio_site/resume.pdf" download class="text-[#4461f2] hover:underline">Download the resume instead.</a>
+          </p>
+        </iframe>
+      </div>
+
+      <!-- PDF Viewer: LSEG -->
+      <div class="pdf-container fade-up rounded-2xl overflow-hidden border border-white/10 hidden" id="viewer-lseg" style="--d:0.4s">
+        <iframe
+          src="/Portfolio_site/lseg_resume.pdf#toolbar=0&navpanes=0"
+          class="w-full rounded-2xl"
+          style="min-height: 85vh; border: none;"
+          title="Abhilash Kumar Panda — LSEG Resume"
+        >
+          <p class="text-white/50 p-8 text-center">
+            Your browser does not support embedded PDFs.
+            <a href="/Portfolio_site/lseg_resume.pdf" download class="text-[#4461f2] hover:underline">Download the resume instead.</a>
           </p>
         </iframe>
       </div>
@@ -57,6 +88,24 @@ import MainLayout from "../layout/MainLayout.astro";
 
 </MainLayout>
 
+<script>
+  function switchTab(tab) {
+    const isGeneral = tab === 'general';
+
+    // Toggle tab buttons
+    document.getElementById('tab-general').classList.toggle('tab-active', isGeneral);
+    document.getElementById('tab-lseg').classList.toggle('tab-active', !isGeneral);
+
+    // Toggle actions
+    document.getElementById('actions-general').classList.toggle('hidden', !isGeneral);
+    document.getElementById('actions-lseg').classList.toggle('hidden', isGeneral);
+
+    // Toggle viewers
+    document.getElementById('viewer-general').classList.toggle('hidden', !isGeneral);
+    document.getElementById('viewer-lseg').classList.toggle('hidden', isGeneral);
+  }
+</script>
+
 <style>
   .display-text { font-family: 'Space Grotesk', sans-serif; }
 
@@ -65,6 +114,22 @@ import MainLayout from "../layout/MainLayout.astro";
     font-family: 'Space Grotesk', sans-serif; font-size: clamp(8rem, 20vw, 18rem); font-weight: 800;
     color: transparent; -webkit-text-stroke: 1px rgba(68,97,242,0.055);
     pointer-events: none; user-select: none; white-space: nowrap; z-index: 0;
+  }
+
+  .tab-btn {
+    padding: 0.5rem 1.25rem; border-radius: 0.5rem;
+    font-size: 0.875rem; font-weight: 500;
+    border: 1px solid rgba(255,255,255,0.08);
+    color: rgba(255,255,255,0.45);
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .tab-btn:hover { color: rgba(255,255,255,0.8); border-color: rgba(255,255,255,0.15); }
+  .tab-active {
+    color: white;
+    background: rgba(68,97,242,0.15);
+    border-color: rgba(68,97,242,0.3);
   }
 
   .btn-primary {
