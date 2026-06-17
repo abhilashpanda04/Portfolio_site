@@ -1,0 +1,12 @@
+---
+export interface Props {
+  index: string;
+  label: string;
+}
+
+const { index, label } = Astro.props;
+---
+
+<div class="font-mono text-caption text-text-muted uppercase tracking-[0.12em] mb-6">
+  {index} / {label}
+</div>

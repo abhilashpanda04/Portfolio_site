@@ -1,168 +1,112 @@
 ---
 import MainLayout from "../layout/MainLayout.astro";
+import Icon from "../components/Icon.astro";
+import Button from "../components/Button.astro";
+import Reveal from "../components/Reveal.astro";
+
+const title = "Resume | Abhilash Kumar Panda";
+const seoTitle = "Resume | Abhilash Kumar Panda";
+const seoDesc = "Two versions: a general resume and an LSEG-tailored resume. Download PDF or view inline.";
 ---
 
-<MainLayout
-  title="Resume — Abhilash Kumar Panda"
-  seoTitle="Resume of Abhilash Kumar Panda | Senior Data Scientist"
-  seoDesc="Download the resume of Abhilash Kumar Panda — Senior Data Scientist specialising in GenAI, Agentic Systems, RAG, and LLMOps for financial services.">
+<MainLayout title={title} seoTitle={seoTitle} seoDesc={seoDesc}>
+  <section class="pt-32 md:pt-40 pb-16">
+    <div class="max-w-content mx-auto px-6 md:px-12 lg:px-20">
+      <Reveal>
+        <h1 class="font-display text-headline md:text-display text-text-primary">Resume</h1>
+        
+        <p class="mt-4 text-body text-text-body max-w-prose">
+          Two versions: a general resume focused on GenAI and financial AI leadership, and an LSEG-tailored resume highlighting production systems delivered inside the group.
+        </p>
+      </Reveal>
 
-  <!-- ═══ RESUME ═══ -->
-  <section class="relative min-h-screen pt-20 pb-32">
-    <div class="ghost-text" aria-hidden="true">CV</div>
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 w-full relative z-10">
+      <Reveal delay="80ms" class="mt-10">
+        <div class="flex gap-8 border-b border-border">
+          <button type="button" id="tab-general" class="tab-btn pb-3 font-mono text-caption uppercase tracking-[0.12em] text-text-primary border-b border-text-primary transition-colors" aria-pressed="true">
+            General
+          </button>
+          <button type="button" id="tab-lseg" class="tab-btn pb-3 font-mono text-caption uppercase tracking-[0.12em] text-text-muted hover:text-text-primary border-b border-transparent transition-colors" aria-pressed="false">
+            LSEG
+          </button>
+        </div>
+      </Reveal>
 
-      <!-- Header -->
-      <div class="flex items-center gap-3 mb-6 fade-up" style="--d:0.1s">
-        <div class="h-px w-10 bg-gradient-to-r from-[#4461f2] to-transparent"></div>
-        <span class="font-mono text-xs text-[#4461f2]/60 uppercase tracking-[0.2em]">Download & View</span>
-      </div>
+      <Reveal delay="160ms" class="mt-8">
+        <div id="actions-general" class="flex flex-wrap gap-4">
+          <Button href="/Portfolio_site/resume.pdf" download="Abhilash_Kumar_Panda_Resume.pdf" variant="primary">
+            <Icon name="download" class="h-4 w-4" size={16} />
+            Download PDF
+          </Button>
+          <Button href="/Portfolio_site/resume.pdf" target="_blank" rel="noopener noreferrer" variant="secondary">
+            Open in new tab
+            <Icon name="external" class="h-4 w-4" size={16} />
+          </Button>
+        </div>
 
-      <h1 class="text-4xl md:text-5xl font-bold mb-4 leading-tight fade-up" style="--d:0.2s">
-        <span class="display-text block text-white/90">Resume</span>
-      </h1>
-
-      <!-- Tab Switcher -->
-      <div class="flex gap-1 mb-8 fade-up" style="--d:0.25s">
-        <button id="tab-general" class="tab-btn tab-active" onclick="switchTab('general')">
-          General
-        </button>
-        <button id="tab-lseg" class="tab-btn" onclick="switchTab('lseg')">
-          LSEG
-        </button>
-      </div>
-
-      <!-- Action Buttons -->
-      <div class="flex flex-wrap gap-4 mb-10 fade-up" id="actions-general" style="--d:0.3s">
-        <a href="/Portfolio_site/resume.pdf" download class="btn-primary">
-          <svg class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
-          </svg>
-          Download PDF
-        </a>
-        <a href="/Portfolio_site/resume.pdf" target="_blank" class="btn-ghost">Open in new tab ↗</a>
-      </div>
-
-      <div class="flex flex-wrap gap-4 mb-10 fade-up hidden" id="actions-lseg" style="--d:0.3s">
-        <a href="/Portfolio_site/lseg_resume.pdf" download class="btn-primary">
-          <svg class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
-          </svg>
-          Download LSEG Resume
-        </a>
-        <a href="/Portfolio_site/lseg_resume.pdf" target="_blank" class="btn-ghost">Open in new tab ↗</a>
-      </div>
-
-      <!-- PDF Viewer: General -->
-      <div class="pdf-container fade-up rounded-2xl overflow-hidden border border-white/10" id="viewer-general" style="--d:0.4s">
-        <iframe
-          src="/Portfolio_site/resume.pdf#toolbar=0&navpanes=0"
-          class="w-full rounded-2xl"
-          style="min-height: 85vh; border: none;"
-          title="Abhilash Kumar Panda — General Resume"
-        >
-          <p class="text-white/50 p-8 text-center">
-            Your browser does not support embedded PDFs.
-            <a href="/Portfolio_site/resume.pdf" download class="text-[#4461f2] hover:underline">Download the resume instead.</a>
-          </p>
-        </iframe>
-      </div>
-
-      <!-- PDF Viewer: LSEG -->
-      <div class="pdf-container fade-up rounded-2xl overflow-hidden border border-white/10 hidden" id="viewer-lseg" style="--d:0.4s">
-        <iframe
-          src="/Portfolio_site/lseg_resume.pdf#toolbar=0&navpanes=0"
-          class="w-full rounded-2xl"
-          style="min-height: 85vh; border: none;"
-          title="Abhilash Kumar Panda — LSEG Resume"
-        >
-          <p class="text-white/50 p-8 text-center">
-            Your browser does not support embedded PDFs.
-            <a href="/Portfolio_site/lseg_resume.pdf" download class="text-[#4461f2] hover:underline">Download the resume instead.</a>
-          </p>
-        </iframe>
-      </div>
-
+        <div id="actions-lseg" class="flex flex-wrap gap-4 hidden">
+          <Button href="/Portfolio_site/lseg_resume.pdf" download="Abhilash_Kumar_Panda_LSEG_Resume.pdf" variant="primary">
+            <Icon name="download" class="h-4 w-4" size={16} />
+            Download LSEG Resume
+          </Button>
+        </div>
+      </Reveal>
     </div>
   </section>
 
+  <section class="pb-24 md:pb-32">
+    <div class="max-w-content mx-auto px-6 md:px-12 lg:px-20">
+      <Reveal delay="240ms">
+        <div class="pdf-container rounded-2xl overflow-hidden border border-border" id="viewer-general">
+          <iframe src="/Portfolio_site/resume.pdf#toolbar=0&navpanes=0" class="w-full rounded-2xl" style="min-height: 85vh; border: none;" title="Abhilash Kumar Panda — General Resume"></iframe>
+        </div>
+
+        <div class="pdf-container rounded-2xl overflow-hidden border border-border hidden" id="viewer-lseg">
+          <iframe src="/Portfolio_site/lseg_resume.pdf#toolbar=0&navpanes=0" class="w-full rounded-2xl" style="min-height: 85vh; border: none;" title="Abhilash Kumar Panda — LSEG Resume"></iframe>
+        </div>
+      </Reveal>
+    </div>
+  </section>
+
+  <script is:inline>
+    (function() {
+      function switchTab(tabName) {
+        const isGeneral = tabName === 'general';
+        const generalViewer = document.getElementById('viewer-general');
+        const lsegViewer = document.getElementById('viewer-lseg');
+        const generalActions = document.getElementById('actions-general');
+        const lsegActions = document.getElementById('actions-lseg');
+        const generalTab = document.getElementById('tab-general');
+        const lsegTab = document.getElementById('tab-lseg');
+
+        if (generalViewer && lsegViewer) {
+          generalViewer.classList.toggle('hidden', !isGeneral);
+          lsegViewer.classList.toggle('hidden', isGeneral);
+        }
+
+        if (generalActions && lsegActions) {
+          generalActions.classList.toggle('hidden', !isGeneral);
+          lsegActions.classList.toggle('hidden', isGeneral);
+        }
+
+        if (generalTab) {
+          generalTab.classList.toggle('text-text-primary', isGeneral);
+          generalTab.classList.toggle('text-text-muted', !isGeneral);
+          generalTab.classList.toggle('border-text-primary', isGeneral);
+          generalTab.classList.toggle('border-transparent', !isGeneral);
+          generalTab.setAttribute('aria-pressed', String(isGeneral));
+        }
+
+        if (lsegTab) {
+          lsegTab.classList.toggle('text-text-primary', !isGeneral);
+          lsegTab.classList.toggle('text-text-muted', isGeneral);
+          lsegTab.classList.toggle('border-text-primary', !isGeneral);
+          lsegTab.classList.toggle('border-transparent', isGeneral);
+          lsegTab.setAttribute('aria-pressed', String(!isGeneral));
+        }
+      }
+
+      document.getElementById('tab-general')?.addEventListener('click', function() { switchTab('general'); });
+      document.getElementById('tab-lseg')?.addEventListener('click', function() { switchTab('lseg'); });
+    })();
+  </script>
 </MainLayout>
-
-<script>
-  function switchTab(tab) {
-    const isGeneral = tab === 'general';
-
-    // Toggle tab buttons
-    document.getElementById('tab-general').classList.toggle('tab-active', isGeneral);
-    document.getElementById('tab-lseg').classList.toggle('tab-active', !isGeneral);
-
-    // Toggle actions
-    document.getElementById('actions-general').classList.toggle('hidden', !isGeneral);
-    document.getElementById('actions-lseg').classList.toggle('hidden', isGeneral);
-
-    // Toggle viewers
-    document.getElementById('viewer-general').classList.toggle('hidden', !isGeneral);
-    document.getElementById('viewer-lseg').classList.toggle('hidden', isGeneral);
-  }
-</script>
-
-<style>
-  .display-text { font-family: 'Space Grotesk', sans-serif; }
-
-  .ghost-text {
-    position: absolute; right: -2rem; top: 50%; transform: translateY(-50%);
-    font-family: 'Space Grotesk', sans-serif; font-size: clamp(8rem, 20vw, 18rem); font-weight: 800;
-    color: transparent; -webkit-text-stroke: 1px rgba(68,97,242,0.055);
-    pointer-events: none; user-select: none; white-space: nowrap; z-index: 0;
-  }
-
-  .tab-btn {
-    padding: 0.5rem 1.25rem; border-radius: 0.5rem;
-    font-size: 0.875rem; font-weight: 500;
-    border: 1px solid rgba(255,255,255,0.08);
-    color: rgba(255,255,255,0.45);
-    background: transparent;
-    cursor: pointer;
-    transition: all 0.2s;
-  }
-  .tab-btn:hover { color: rgba(255,255,255,0.8); border-color: rgba(255,255,255,0.15); }
-  .tab-active {
-    color: white;
-    background: rgba(68,97,242,0.15);
-    border-color: rgba(68,97,242,0.3);
-  }
-
-  .btn-primary {
-    display: inline-flex; align-items: center;
-    padding: 0.75rem 1.5rem; border-radius: 0.5rem;
-    background: linear-gradient(135deg, #4461f2, #bc52ee);
-    color: white; font-weight: 500; position: relative; overflow: hidden;
-    transition: opacity 0.2s, transform 0.2s;
-    box-shadow: 0 4px 24px rgba(68,97,242,0.25);
-  }
-  .btn-primary::after {
-    content: ''; position: absolute; inset: 0;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
-    transform: translateX(-100%); transition: transform 0.5s ease;
-  }
-  .btn-primary:hover::after { transform: translateX(100%); }
-  .btn-primary:hover { opacity: 0.92; transform: translateY(-1px); }
-
-  .btn-ghost {
-    display: inline-flex; align-items: center;
-    padding: 0.75rem 1.5rem; border-radius: 0.5rem;
-    border: 1px solid rgba(255,255,255,0.1); color: rgba(255,255,255,0.7); font-weight: 500;
-    transition: all 0.2s;
-  }
-  .btn-ghost:hover { background: rgba(255,255,255,0.05); color: white; border-color: rgba(255,255,255,0.2); }
-
-  .pdf-container {
-    box-shadow: 0 0 40px rgba(68,97,242,0.08);
-  }
-
-  .fade-up {
-    opacity: 0; transform: translateY(18px);
-    animation: riseUp 0.65s ease-out var(--d, 0s) both;
-  }
-  @keyframes riseUp { to { opacity: 1; transform: translateY(0); } }
-</style>

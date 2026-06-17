@@ -1,0 +1,13 @@
+---
+export interface Props {
+  class?: string;
+  delay?: string;
+  as?: 'div' | 'section' | 'article' | 'li';
+}
+
+const { class: className = '', delay = '0ms', as: Tag = 'div' } = Astro.props;
+---
+
+<Tag class={`reveal ${className}`} style={`transition-delay: ${delay};`}>
+  <slot />
+</Tag>

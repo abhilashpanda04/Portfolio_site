@@ -1,275 +1,188 @@
 ---
 import MainLayout from "../layout/MainLayout.astro";
+import Icon from "../components/Icon.astro";
+import SectionLabel from "../components/SectionLabel.astro";
+import Button from "../components/Button.astro";
+import Reveal from "../components/Reveal.astro";
+
+const title = "Projects | Abhilash Kumar Panda";
+const seoTitle = "Projects | Abhilash Kumar Panda";
+const seoDesc = "Production AI projects in financial data extraction, RAG, document intelligence, and agentic systems.";
+
+const projects = [
+  {
+    number: "01",
+    tag: "GenAI · Production",
+    title: "GenAI Financial Data Extraction Pipeline",
+    impact: "£350K+ saved · 50 FTE reduction",
+    story: [
+      { label: "Challenge", text: "Broker reports hold critical data, but formats vary and standard extraction misses the financial semantics." },
+      { label: "Approach", text: "Meta-prompting + PydanticAI, designed by someone who has read hundreds of these reports." },
+      { label: "Outcome", text: "High-accuracy structured extraction at scale, eliminating 50 FTEs of manual work." }
+    ],
+    tech: ["LangChain", "PydanticAI", "GPT-4", "Meta-prompting", "Python"]
+  },
+  {
+    number: "02",
+    tag: "RAG · Production",
+    title: "Context-Aware RAG Answer Engine",
+    impact: "Source-referenced · Session memory · Analyst-grade",
+    story: [
+      { label: "Challenge", text: "Financial analysts need reliable answers, but LLMs hallucinate and compliance demands auditability." },
+      { label: "Approach", text: "Source-referenced RAG with session memory; prompts shaped by real analyst query patterns." },
+      { label: "Outcome", text: "Analysts get answers they can trace back to source documents across multi-turn workflows." }
+    ],
+    tech: ["RAG", "LangChain", "Vector DB", "Prompt Engineering", "Session Memory"]
+  },
+  {
+    number: "03",
+    tag: "Document Intelligence · Production",
+    title: "Korean Regulatory Filing Extraction",
+    impact: "15 days → 40 minutes · 130K+ documents · £250K+ saved",
+    story: [
+      { label: "Challenge", text: "Korean regulatory filings in non-Latin script, high volume, tight accuracy requirements." },
+      { label: "Approach", text: "End-to-end NLP pipeline with domain-tuned classification and extraction rules." },
+      { label: "Outcome", text: "85%+ hit rate across 130K+ docs, 5 FTE reduction, processing cut from 15 days to 40 minutes." }
+    ],
+    tech: ["Python", "NLP", "Cosine Similarity", "Two-stage Classification", "BeautifulSoup"]
+  },
+  {
+    number: "04",
+    tag: "Agentic AI · Research",
+    title: "Multi-Agent Financial Document Intelligence PoC",
+    impact: "Executive-endorsed · LangGraph orchestration",
+    story: [
+      { label: "Challenge", text: "Complex financial documents need reasoning, routing, and multi-step validation beyond a single prompt." },
+      { label: "Approach", text: "LangGraph multi-agent architecture designed around real document types and analyst workflows." },
+      { label: "Outcome", text: "PoC earned regional executive endorsement and demonstrated a path to autonomous document intelligence." }
+    ],
+    tech: ["LangGraph", "Agentic AI", "LLM", "Financial NLP", "Python"]
+  },
+  {
+    number: "05",
+    tag: "Document Intelligence · Production",
+    title: "Image-Based Document Intelligence Pipeline",
+    impact: "0% → 64% image coverage · 5 FTE eliminated",
+    story: [
+      { label: "Challenge", text: "A large class of financial documents existed only as images, completely outside automation reach." },
+      { label: "Approach", text: "Two-stage pipeline: Azure Layout Model for structure + Python rules for financial semantics." },
+      { label: "Outcome", text: "Coverage expanded from 0% to 64%, unlocking a new automation surface and eliminating 5 FTEs." }
+    ],
+    tech: ["Azure Document Intelligence", "Azure Layout Model", "Python", "Rules Engine"]
+  },
+  {
+    number: "06",
+    tag: "ML · Production",
+    title: "Hybrid ML Ingestion Pipeline",
+    impact: "5 markets · 3 FTE saved · 50% scope reduction",
+    story: [
+      { label: "Challenge", text: "Ingesting financial documents across five markets with inconsistent formats and noisy boundaries." },
+      { label: "Approach", text: "Cosine similarity + two-stage classification, with rule-based edge cases handled by domain expertise." },
+      { label: "Outcome", text: "3 FTEs saved, 50% reduction in out-of-scope data, reliable ingestion across CA, IN, US, AU." }
+    ],
+    tech: ["Cosine Similarity", "Two-stage Classification", "FastAPI", "HuggingFace", "S-BERT"]
+  }
+];
 ---
 
-<MainLayout
-  title="Projects — Abhilash Kumar Panda"
-  seoTitle="Projects by Abhilash Kumar Panda | GenAI & ML Portfolio"
-  seoDesc="Production GenAI systems, RAG pipelines, LLM fine-tuning and MLOps projects delivering £600K+ in business value at LSEG.">
-
-  <div class="max-w-5xl mx-auto px-4 sm:px-6 py-16">
-
-    <!-- Header -->
-    <div class="mb-6">
-      <div class="flex items-center gap-3 mb-6">
-        <div class="h-px w-10 bg-gradient-to-r from-[#4461f2] to-transparent"></div>
-        <span class="text-xs font-mono text-[#4461f2]/50 uppercase tracking-[0.2em]">Portfolio</span>
-      </div>
-      <h1 class="text-4xl md:text-5xl font-bold text-white mb-4 leading-tight">
-        The work
-      </h1>
-      <p class="text-lg text-white/45 max-w-2xl leading-relaxed">
-        Production systems running in global financial workflows. Plus personal projects exploring the
-        frontier of GenAI and LLMOps.
-      </p>
+<MainLayout title={title} seoTitle={seoTitle} seoDesc={seoDesc}>
+  <section class="pt-32 md:pt-40 pb-24">
+    <div class="max-w-content mx-auto px-6 md:px-12 lg:px-20">
+      <Reveal>
+        <SectionLabel index="Work" label="Projects" />
+        
+        <h1 class="font-display text-headline md:text-display text-text-primary max-w-3xl">
+          Production work that proves the thesis
+        </h1>
+        
+        <p class="mt-6 text-body text-text-body max-w-prose">
+          Every project follows the same pattern: start with the financial workflow, understand where it breaks, then build AI that fixes it at scale. Not demos — systems.
+        </p>
+      </Reveal>
     </div>
+  </section>
 
-    <!-- Impact banner -->
-    <div class="mb-16 grid grid-cols-2 sm:grid-cols-4 gap-4">
-      {[
-        { value: "£600K+", label: "Total business value" },
-        { value: "55", label: "FTEs automated" },
-        { value: "130K+", label: "Documents processed" },
-        { value: "5", label: "Markets automated" }
-      ].map(s => (
-        <div class="p-4 rounded-xl bg-white/5 border border-white/10 text-center">
-          <div class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#4461f2] to-[#bc52ee]">{s.value}</div>
-          <div class="text-xs text-white/35 mt-1">{s.label}</div>
-        </div>
-      ))}
-    </div>
-
-    <!-- ═══ PRODUCTION WORK ═══ -->
-    <div class="mb-20">
-      <div class="flex items-center gap-4 mb-4">
-        <span class="text-xs font-mono text-white/25 uppercase tracking-[0.2em]">01</span>
-        <h2 class="text-xl font-bold text-white">Production work at LSEG</h2>
-        <div class="h-px flex-1 bg-white/5"></div>
+  <section class="pb-24 md:pb-32">
+    <div class="max-w-content mx-auto px-6 md:px-12 lg:px-20">
+      <div class="border-t border-border">
+        {projects.map((p, i) => (
+          <Reveal delay={`${i * 80}ms`} as="article" class="project-row group border-b border-border">
+            <button
+              type="button"
+              class="w-full py-8 md:py-10 flex items-start gap-6 md:gap-10 text-left transition-colors duration-200 hover:bg-surface"
+              aria-expanded="false"
+              data-project={i}
+            >
+              <span class="font-mono text-caption text-text-muted uppercase tracking-[0.12em] w-10 md:w-14 flex-shrink-0 pt-1">{p.number}</span>
+              
+              <div class="flex-1 min-w-0">
+                <p class="font-mono text-caption text-text-muted uppercase tracking-[0.12em]">{p.tag}</p>
+                <h3 class="mt-2 font-display text-title md:text-headline text-text-primary group-hover:text-text-body transition-colors">{p.title}</h3>
+                <p class="mt-1 text-body text-text-muted">{p.impact}</p>
+              </div>
+              
+              <span class="flex-shrink-0 mt-1">
+                <Icon name="arrow-down" class="h-5 w-5 text-text-muted group-hover:text-text-primary transition-transform duration-200 project-chevron" size={20} />
+              </span>
+            </button>
+            
+            <div class="project-detail hidden px-10 md:px-24 pb-8 md:pb-10">
+              <div class="grid md:grid-cols-3 gap-6 mb-6">
+                {p.story.map(s => (
+                  <div>
+                    <p class="font-mono text-caption text-text-muted uppercase tracking-[0.12em] mb-2">{s.label}</p>
+                    <p class="text-body text-text-body leading-relaxed">{s.text}</p>
+                  </div>
+                ))}
+              </div>
+              
+              <div class="flex flex-wrap gap-2">
+                {p.tech.map(t => (
+                  <span class="px-2.5 py-1 rounded-md border border-border font-mono text-caption text-text-muted uppercase tracking-[0.08em]">{t}</span>
+                ))}
+              </div>
+            </div>
+          </Reveal>
+        ))}
       </div>
-      <p class="text-white/35 text-sm mb-10 ml-8">Financial AI systems delivering measurable outcomes in global workflows</p>
+    </div>
+  </section>
 
-      <div class="space-y-5">
-        {[
-          {
-            tag: "GenAI · Production",
-            accent: "from-[#4461f2]",
-            accentText: "text-[#7c8bff]",
-            title: "GenAI Financial Data Extraction Pipeline",
-            pull: "£350K+ saved · 50 FTE reduction",
-            body: "Meta-prompting and PydanticAI for extracting structured financial data from broker reports. The accuracy came from deeply understanding the document format — not just the model choice.",
-            tech: ["LangChain", "PydanticAI", "GPT-4", "Meta-prompting", "Python"],
-            metrics: [["£350K+", "Cost savings"], ["50", "FTE eliminated"], ["High", "Extraction accuracy"]]
-          },
-          {
-            tag: "RAG · Production",
-            accent: "from-[#7c8bff]",
-            accentText: "text-[#9ca8ff]",
-            title: "Context-Aware RAG Answer Engine",
-            pull: "Source-referenced · Session memory · Analyst-grade",
-            body: "RAG system built specifically for financial analysts. Source-referenced because compliance requires auditability. Session memory because analyst workflows are multi-turn. Prompt design informed by knowing exactly how analysts phrase financial queries.",
-            tech: ["RAG", "LangChain", "Vector DB", "Prompt Engineering", "Session Memory"],
-            metrics: [["Sourced", "Response type"], ["Multi-turn", "Memory"], ["Global", "User base"]]
-          },
-          {
-            tag: "Document Intelligence · Production",
-            accent: "from-[#bc52ee]",
-            accentText: "text-[#d174ff]",
-            title: "Korean Regulatory Filing Extraction",
-            pull: "15 days → 40 minutes · 130K+ documents · £250K+ saved",
-            body: "End-to-end extraction for Korean financial regulatory filings. 85%+ hit rate across 130K+ documents, 5 FTE reduced. The speed improvement wasn't the hard part — the precision in a non-English financial context was.",
-            tech: ["Python", "NLP", "Cosine Similarity", "Two-stage Classification", "BeautifulSoup"],
-            metrics: [["£250K+", "Savings"], ["85%+", "Hit rate"], ["130K+", "Documents"]]
-          },
-          {
-            tag: "Agentic AI · Research",
-            accent: "from-[#4461f2]",
-            accentText: "text-[#7c8bff]",
-            title: "Multi-Agent Financial Document Intelligence PoC",
-            pull: "Executive-endorsed · LangGraph orchestration",
-            body: "Multi-agent PoC for intelligent financial document processing. Designed the agent architecture knowing the document types, the financial context, and the analyst workflows it needed to serve. Earned regional executive endorsement at LSEG.",
-            tech: ["LangGraph", "Agentic AI", "LLM", "Financial NLP", "Python"],
-            metrics: [["PoC", "Stage"], ["Executive", "Endorsement"], ["Multi", "Agents"]]
-          },
-          {
-            tag: "Document Intelligence · Production",
-            accent: "from-[#7c8bff]",
-            accentText: "text-[#9ca8ff]",
-            title: "Image-Based Document Intelligence Pipeline",
-            pull: "0% → 64% image coverage · 5 FTE eliminated",
-            body: "Two-stage pipeline: Azure Layout Model for structure extraction + Python rule-based processing for financial semantics. Expanded coverage of image-based financial documents from zero to 64%, opening an entirely new automation surface.",
-            tech: ["Azure Document Intelligence", "Azure Layout Model", "Python", "Rules Engine"],
-            metrics: [["0→64%", "Coverage gain"], ["5", "FTE saved"], ["Two-stage", "Architecture"]]
-          },
-          {
-            tag: "ML · Production",
-            accent: "from-[#bc52ee]",
-            accentText: "text-[#d174ff]",
-            title: "Hybrid ML Ingestion Pipeline",
-            pull: "5 markets · 3 FTE saved · 50% scope reduction",
-            body: "Hybrid cosine similarity + two-stage classification pipeline for financial document ingestion across CA, IN, US, AU markets. Rule-based edge cases handled by someone who'd actually seen those edge cases in production financial data.",
-            tech: ["Cosine Similarity", "Two-stage Classification", "FastAPI", "HuggingFace", "S-BERT"],
-            metrics: [["5", "Markets"], ["3", "FTE saved"], ["50%", "Out-of-scope reduced"]]
-          }
-        ].map(p => (
-          <div class="group relative bg-white/5 rounded-xl overflow-hidden border border-white/10 hover:border-white/20 transition-all duration-500">
-            <div class={`absolute top-0 left-0 w-0.5 h-full bg-gradient-to-b ${p.accent} to-transparent opacity-60`}></div>
-            <div class="p-6 md:p-8 md:grid md:grid-cols-3 gap-8">
-              <div class="md:col-span-2 mb-6 md:mb-0">
-                <span class={`text-xs font-mono ${p.accentText} uppercase tracking-wider`}>{p.tag}</span>
-                <h3 class="text-lg font-semibold text-white mt-2 mb-1.5 leading-snug group-hover:text-white/95">{p.title}</h3>
-                <p class="text-sm font-medium text-white/50 mb-3">{p.pull}</p>
-                <p class="text-sm text-white/45 leading-relaxed mb-5">{p.body}</p>
-                <div class="flex flex-wrap gap-1.5">
-                  {p.tech.map(t => (
-                    <span class="px-2 py-0.5 text-xs rounded-md bg-white/5 text-white/40 border border-white/10">{t}</span>
-                  ))}
-                </div>
-              </div>
-              <div class="md:col-span-1">
-                <div class="p-5 rounded-xl bg-white/5 border border-white/5 space-y-4">
-                  {p.metrics.map(([val, label]) => (
-                    <div>
-                      <div class={`text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r ${p.accent} to-[#bc52ee]`}>{val}</div>
-                      <div class="text-xs text-white/30 mt-0.5">{label}</div>
-                    </div>
-                  ))}
-                </div>
-              </div>
+  <section class="py-24 md:py-32 border-t border-border">
+    <div class="max-w-content mx-auto px-6 md:px-12 lg:px-20">
+      <Reveal>
+        <div class="p-8 md:p-12 rounded-2xl border border-border bg-surface">
+          <div class="flex items-start gap-4">
+            <span class="h-2 w-2 rounded-full bg-text-primary mt-2 flex-shrink-0"></span>
+            <div class="flex-1">
+              <h2 class="font-display text-title text-text-primary mb-3">Let's build the next one together</h2>
+              <p class="text-body text-text-body leading-relaxed mb-6 max-w-xl">
+                Seeking senior IC and lead roles in fintech, exchanges, asset management, and financial AI teams worldwide.
+              </p>
+              <Button href="mailto:abhilash.k.panda@gmail.com" variant="primary">
+                <Icon name="mail" class="h-4 w-4" size={16} />
+                abhilash.k.panda@gmail.com
+              </Button>
             </div>
           </div>
-        ))}
-      </div>
-    </div>
-
-    <!-- ═══ PERSONAL PROJECTS ═══ -->
-    <div class="mb-20">
-      <div class="flex items-center gap-4 mb-4">
-        <span class="text-xs font-mono text-white/25 uppercase tracking-[0.2em]">02</span>
-        <h2 class="text-xl font-bold text-white">Personal projects</h2>
-        <div class="h-px flex-1 bg-white/5"></div>
-      </div>
-      <p class="text-white/35 text-sm mb-10 ml-8">Exploring the frontier on personal time. All on GitHub.</p>
-
-      <div class="grid sm:grid-cols-2 gap-4">
-        {[
-          {
-            title: "Smart Note Chrome Extension",
-            tag: "LLM · Chrome Extension",
-            desc: "LLM-powered YouTube note-taking with real-time video summarisation. Built to solve a personal pain point — and shipped as a Chrome extension.",
-            tech: ["LLM", "Chrome Extension", "JavaScript"]
-          },
-          {
-            title: "LLaMA 3.1 8B Fine-tuning",
-            tag: "LLMOps · Fine-tuning",
-            desc: "Domain-adapted LLaMA 3.1 8B via Unsloth QLoRA — ~60% faster inference than standard PEFT while maintaining task quality. The dataset quality mattered more than the training config.",
-            tech: ["LLaMA 3.1", "Unsloth", "QLoRA", "HuggingFace"]
-          },
-          {
-            title: "MLOps Query Classifier",
-            tag: "MLOps · CI/CD",
-            desc: "End-to-end MLOps pipeline with CI/CD, CML, drift monitoring, and automated retraining. A demonstration of what production-grade ML lifecycle management actually looks like.",
-            tech: ["Python", "CI/CD", "CML", "MLflow", "Drift Monitoring"]
-          },
-          {
-            title: "BERT from Scratch",
-            tag: "NLP · Research",
-            desc: "MLM pre-training of BERT from scratch, fine-tuned on Stanford Sentiment Treebank. End-to-end understanding of the transformer training loop.",
-            tech: ["PyTorch", "Transformers", "MLM", "Stanford Sentiment Treebank"]
-          }
-        ].map(p => (
-          <a href="https://github.com/abhilashpanda04" target="_blank" rel="noopener noreferrer"
-             class="group block p-6 rounded-xl bg-white/5 border border-white/10 hover:border-white/20 hover:-translate-y-1 transition-all duration-300">
-            <span class="text-xs font-mono text-white/30 uppercase tracking-wider">{p.tag}</span>
-            <h3 class="text-base font-semibold text-white mt-2 mb-2 group-hover:text-white/90">{p.title}</h3>
-            <p class="text-sm text-white/45 leading-relaxed mb-4">{p.desc}</p>
-            <div class="flex flex-wrap gap-1.5 mb-4">
-              {p.tech.map(t => (
-                <span class="px-2 py-0.5 text-xs rounded-md bg-white/5 text-white/35 border border-white/10">{t}</span>
-              ))}
-            </div>
-            <span class="text-xs text-[#4461f2]/60 group-hover:text-[#7c8bff] transition-colors flex items-center gap-1">
-              <svg class="h-3 w-3" fill="currentColor" viewBox="0 0 24 24">
-                <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"/>
-              </svg>
-              View on GitHub
-            </span>
-          </a>
-        ))}
-      </div>
-    </div>
-
-    <!-- ═══ RECOGNITION ═══ -->
-    <div class="mb-20 grid md:grid-cols-2 gap-8">
-
-      <div class="p-6 rounded-xl bg-white/5 border border-white/10">
-        <div class="flex items-center gap-4 mb-6">
-          <span class="text-xs font-mono text-white/25 uppercase tracking-[0.2em]">Recognition</span>
         </div>
-        <div class="space-y-5">
-          {[
-            { title: "GenAI Leadership Recognition", org: "LSEG", year: "2023", desc: "Multi-agent AI PoC earned regional executive endorsement." },
-            { title: "Hall of Fame Award", org: "LSEG", year: "2023", desc: "Recognised for Non-English market automation delivering measurable impact." },
-            { title: "Speaker — Learning Forum", org: "LSEG", year: "2023", desc: "Presented on Python problem-solving to the internal engineering community." }
-          ].map(a => (
-            <div class="relative pl-4 before:absolute before:left-0 before:top-2 before:h-1.5 before:w-1.5 before:rounded-full before:bg-gradient-to-b before:from-[#4461f2] before:to-[#bc52ee]">
-              <h3 class="text-sm font-semibold text-white/85">{a.title}</h3>
-              <p class="text-xs text-white/30 mb-1">{a.org} · {a.year}</p>
-              <p class="text-sm text-white/50">{a.desc}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <div class="p-6 rounded-xl bg-white/5 border border-white/10">
-        <div class="flex items-center gap-4 mb-6">
-          <span class="text-xs font-mono text-white/25 uppercase tracking-[0.2em]">Certifications</span>
-        </div>
-        <div class="space-y-3">
-          {[
-            { title: "PG Programme in Data Science", org: "INSOFE / Carnegie Mellon University", icon: "🎓" },
-            { title: "Machine Learning in Production", org: "Andrew Ng · Coursera", icon: "📚" },
-            { title: "Complete MCP Developer Guide", org: "Udemy", icon: "🔧" },
-            { title: "Six Sigma Green Belt", org: "KPMG", icon: "📊" }
-          ].map(cert => (
-            <div class="flex items-center gap-3 p-3 rounded-lg bg-white/5 border border-white/5 hover:border-white/20 transition-all">
-              <span class="text-lg">{cert.icon}</span>
-              <div>
-                <p class="text-sm font-semibold text-white/85">{cert.title}</p>
-                <p class="text-xs text-white/35">{cert.org}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
+      </Reveal>
     </div>
+  </section>
 
-    <!-- CTA -->
-    <div class="text-center py-8">
-      <p class="text-white/30 text-sm mb-5">Want to build something together?</p>
-      <a href="mailto:abhilash.k.panda@gmail.com"
-         class="inline-flex items-center gap-2 px-7 py-3.5 rounded-lg bg-gradient-to-r from-[#4461f2] to-[#bc52ee]
-                text-white font-medium hover:opacity-90 hover:-translate-y-0.5 transition-all shadow-lg shadow-[#4461f2]/20">
-        abhilash.k.panda@gmail.com
-      </a>
-    </div>
+  <script is:inline>
+    (function() {
+      document.querySelectorAll('.project-row button').forEach(function(button) {
+        const detail = button.nextElementSibling;
+        const chevron = button.querySelector('.project-chevron');
 
-  </div>
+        button.addEventListener('click', function() {
+          const isExpanded = button.getAttribute('aria-expanded') === 'true';
+          button.setAttribute('aria-expanded', String(!isExpanded));
+          if (detail) detail.classList.toggle('hidden', isExpanded);
+          if (chevron) chevron.classList.toggle('rotate-180', !isExpanded);
+        });
+      });
+    })();
+  </script>
 </MainLayout>
-
-<style>
-  .group {
-    opacity: 0;
-    animation: fadeInUp 0.5s ease-out forwards;
-  }
-  .group:nth-child(1) { animation-delay: 0.05s; }
-  .group:nth-child(2) { animation-delay: 0.12s; }
-  .group:nth-child(3) { animation-delay: 0.19s; }
-  .group:nth-child(4) { animation-delay: 0.26s; }
-  .group:nth-child(5) { animation-delay: 0.33s; }
-  .group:nth-child(6) { animation-delay: 0.40s; }
-
-  @keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(16px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-</style>
