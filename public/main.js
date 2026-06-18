@@ -110,4 +110,116 @@
       updateThemeIcons(next);
     });
   });
+
+  // Constellation generative geometry
+  function initConstellation() {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    const svg = document.getElementById('constellation-canvas');
+    if (!svg) return;
+
+    let width = svg.clientWidth || 0;
+    let height = svg.clientHeight || 0;
+    if (!width || !height) return;
+
+    const nodeCount = 32;
+    const connectionDistance = 140;
+    const nodeRadius = 2;
+    const nodes = [];
+
+    for (let i = 0; i < nodeCount; i++) {
+      nodes.push({
+        x: Math.random() * width,
+        y: Math.random() * height,
+        vx: (Math.random() - 0.5) * 0.12,
+        vy: (Math.random() - 0.5) * 0.12,
+        el: document.createElementNS('http://www.w3.org/2000/svg', 'circle')
+      });
+    }
+
+    nodes.forEach(function(node) {
+      node.el.setAttribute('class', 'constellation__node');
+      node.el.setAttribute('r', nodeRadius);
+      svg.appendChild(node.el);
+    });
+
+    const linePool = [];
+    function getLine() {
+      if (linePool.length) return linePool.pop();
+      const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+      line.setAttribute('class', 'constellation__line');
+      svg.appendChild(line);
+      return line;
+    }
+
+    function releaseLine(line) {
+      line.removeAttribute('x1');
+      line.removeAttribute('y1');
+      line.removeAttribute('x2');
+      line.removeAttribute('y2');
+      line.setAttribute('display', 'none');
+      linePool.push(line);
+    }
+
+    let activeLines = [];
+
+    function resize() {
+      const rect = svg.getBoundingClientRect();
+      width = rect.width;
+      height = rect.height;
+      svg.setAttribute('viewBox', '0 0 ' + width + ' ' + height);
+    }
+
+    function wrap(value, max) {
+      if (value < 0) return max + value;
+      if (value > max) return value - max;
+      return value;
+    }
+
+    let rafId;
+    function tick() {
+      nodes.forEach(function(node) {
+        node.x = wrap(node.x + node.vx, width);
+        node.y = wrap(node.y + node.vy, height);
+        node.el.setAttribute('cx', node.x.toFixed(1));
+        node.el.setAttribute('cy', node.y.toFixed(1));
+      });
+
+      activeLines.forEach(releaseLine);
+      activeLines = [];
+
+      for (let i = 0; i < nodes.length; i++) {
+        for (let j = i + 1; j < nodes.length; j++) {
+          const dx = nodes[i].x - nodes[j].x;
+          const dy = nodes[i].y - nodes[j].y;
+          const distSq = dx * dx + dy * dy;
+          if (distSq < connectionDistance * connectionDistance) {
+            const line = getLine();
+            line.setAttribute('x1', nodes[i].x.toFixed(1));
+            line.setAttribute('y1', nodes[i].y.toFixed(1));
+            line.setAttribute('x2', nodes[j].x.toFixed(1));
+            line.setAttribute('y2', nodes[j].y.toFixed(1));
+            line.setAttribute('display', 'block');
+            activeLines.push(line);
+          }
+        }
+      }
+
+      rafId = requestAnimationFrame(tick);
+    }
+
+    resize();
+    window.addEventListener('resize', resize);
+    tick();
+
+    document.addEventListener('visibilitychange', function() {
+      if (document.hidden) {
+        cancelAnimationFrame(rafId);
+      } else {
+        tick();
+      }
+    });
+  }
+
+  initConstellation();
 })();
