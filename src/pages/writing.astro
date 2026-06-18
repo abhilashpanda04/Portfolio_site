@@ -1,0 +1,81 @@
+---
+import MainLayout from "../layout/MainLayout.astro";
+import Icon from "../components/Icon.astro";
+import SectionLabel from "../components/SectionLabel.astro";
+import Reveal from "../components/Reveal.astro";
+
+const title = "Writing | Abhilash Kumar Panda";
+const seoTitle = "Writing | Abhilash Kumar Panda";
+const seoDesc = "Short-form writing on LLMs, GenAI, systems engineering, and production AI for financial markets.";
+
+const posts = [
+  {
+    title: "How Gemma 4’s Built-In Draft Models Change Speculative Decoding",
+    excerpt: "Gemma 4 ships Multi-Token Prediction and paired draft models as a first-class feature — removing the friction of finding, matching, and deploying separate drafters.",
+    url: "https://www.linkedin.com/posts/abhilash-k-panda_how-gemma-4s-built-in-draft-models-change-share-7472509610080444417-_V8d/",
+    tags: ["LLM", "Inference"]
+  },
+  {
+    title: "LLM Inferencing is a Systems Engineering Challenge",
+    excerpt: "Why serving LLMs at scale is a split-brain problem: prefill is compute-bound, decoding is memory-bandwidth-bound, and the KV cache is the hidden enemy.",
+    url: "https://www.linkedin.com/posts/abhilash-k-panda_machinelearning-llm-generativeai-share-7470333782517002241-Ezuc/",
+    tags: ["Systems Engineering", "LLM"]
+  },
+  {
+    title: "LLM Evolution: From Attention to Memory Management",
+    excerpt: "A 2017–2026 arc from Transformer self-attention through Flash Attention, MLA, CSA/HCA, and sparse retrieval — attention is becoming memory management.",
+    url: "https://www.linkedin.com/posts/abhilash-k-panda_ai-llm-transformers-share-7469989736531587072-7eqV/",
+    tags: ["Transformers", "Architecture"]
+  },
+  {
+    title: "DeepSeek V4: Hierarchical Attention for Efficient Long-Context Retrieval",
+    excerpt: "DeepSeek V4 tackles the economics of million-token context through CSA, HCA, and a token → compressed → global memory hierarchy.",
+    url: "https://www.linkedin.com/posts/abhilash-k-panda_deepseek-llm-aiarchitecture-share-7469649021830131712-88ne/",
+    tags: ["DeepSeek", "Long Context"]
+  }
+];
+---
+
+<MainLayout title={title} seoTitle={seoTitle} seoDesc={seoDesc}>
+  <section class="pt-32 md:pt-40 pb-24 md:pb-32 border-b border-border">
+    <div class="max-w-content mx-auto px-6 md:px-12 lg:px-20">
+      <Reveal>
+        <SectionLabel index="Field Notes" label="LinkedIn" />
+        <h1 class="font-display text-display-xl md:text-[4.5rem] text-text-primary leading-[0.95] tracking-[-0.03em] max-w-4xl">
+          Writing on AI, LLMs, and systems
+        </h1>
+        
+        <p class="mt-8 max-w-2xl text-lg md:text-xl text-text-body leading-relaxed">
+          Short-form notes on the architectures, trade-offs, and economics behind production AI — mostly shared on LinkedIn.
+        </p>
+      </Reveal>
+    </div>
+  </section>
+
+  <section class="py-24 md:py-32">
+    <div class="max-w-content mx-auto px-6 md:px-12 lg:px-20">
+      <div class="grid md:grid-cols-2 gap-6">
+        {posts.map((post, i) => (
+          <Reveal delay={`${i * 80}ms`} as="article" class="group p-6 rounded-xl border border-border bg-transparent hover:bg-surface hover:border-border-strong transition-all duration-200">
+            <div class="flex flex-wrap gap-2">
+              {post.tags.map((tag) => (
+                <span class="font-mono text-caption text-text-muted uppercase tracking-[0.12em]">{tag}</span>
+              ))}
+            </div>
+            <h2 class="mt-4 font-display text-title text-text-primary group-hover:text-text-body transition-colors">{post.title}</h2>
+            <p class="mt-3 text-body text-text-body leading-relaxed">{post.excerpt}</p>
+            <a
+              href={post.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="mt-6 inline-flex items-center gap-2 font-mono text-caption text-text-muted uppercase tracking-[0.12em] hover:text-text-primary transition-colors"
+            >
+              Read on LinkedIn
+              <Icon name="external" class="h-4 w-4" size={16} />
+            </a>
+          </Reveal>
+        ))}
+      </div>
+    </div>
+  </section>
+</MainLayout>
