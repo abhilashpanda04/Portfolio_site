@@ -4,17 +4,17 @@ export default {
   theme: {
     extend: {
       colors: {
-        bg: '#080812',
-        surface: '#0f0f1a',
-        'surface-hover': '#161626',
-        border: '#1e1e32',
-        'border-strong': '#2a2a48',
-        'text-primary': '#f8f8fc',
-        'text-body': '#a0a0b8',
-        'text-muted': '#6b6b8a',
-        accent: '#6366f1',
-        'accent-hover': '#818cf8',
-        'accent-soft': '#4f46e5',
+        bg: 'var(--bg)',
+        surface: 'var(--surface)',
+        'surface-hover': 'var(--surface-hover)',
+        border: 'var(--border)',
+        'border-strong': 'var(--border-strong)',
+        'text-primary': 'var(--text-primary)',
+        'text-body': 'var(--text-body)',
+        'text-muted': 'var(--text-muted)',
+        accent: 'var(--accent)',
+        'accent-hover': 'var(--accent-hover)',
+        'accent-soft': 'var(--accent-soft)',
       },
       fontFamily: {
         display: ['Space Grotesk', 'system-ui', 'sans-serif'],

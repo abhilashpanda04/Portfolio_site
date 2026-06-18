@@ -76,4 +76,38 @@
   } else {
     revealElements.forEach(function(el) { el.classList.add('is-visible'); });
   }
+
+  // Theme toggle
+  function updateThemeIcons(theme) {
+    const darkIcon = document.getElementById('theme-icon-dark');
+    const lightIcon = document.getElementById('theme-icon-light');
+    const toggle = document.getElementById('theme-toggle');
+    if (darkIcon && lightIcon) {
+      darkIcon.classList.toggle('hidden', theme !== 'dark');
+      lightIcon.classList.toggle('hidden', theme === 'dark');
+    }
+    if (toggle) {
+      toggle.setAttribute('aria-pressed', String(theme === 'light'));
+    }
+  }
+
+  function initTheme() {
+    const stored = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    return stored || (prefersDark ? 'dark' : 'light');
+  }
+
+  const initialTheme = initTheme();
+  document.documentElement.setAttribute('data-theme', initialTheme);
+  updateThemeIcons(initialTheme);
+
+  document.querySelectorAll('#theme-toggle').forEach(function(toggle) {
+    toggle.addEventListener('click', function() {
+      const current = document.documentElement.getAttribute('data-theme') || 'dark';
+      const next = current === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      updateThemeIcons(next);
+    });
+  });
 })();

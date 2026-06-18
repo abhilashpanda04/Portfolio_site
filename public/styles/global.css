@@ -1,8 +1,39 @@
-/* Refined dark fintech global styles */
+/* Theme-aware global styles */
+
+:root {
+  /* Dark theme (default) */
+  --bg: #080812;
+  --surface: #0f0f1a;
+  --surface-hover: #161626;
+  --border: #1e1e32;
+  --border-strong: #2a2a48;
+  --text-primary: #f8f8fc;
+  --text-body: #a0a0b8;
+  --text-muted: #6b6b8a;
+  --accent: #6366f1;
+  --accent-hover: #818cf8;
+  --accent-soft: #4f46e5;
+  --selection-bg: rgba(99, 102, 241, 0.25);
+}
+
+[data-theme="light"] {
+  --bg: #fafafa;
+  --surface: #ffffff;
+  --surface-hover: #f3f4f6;
+  --border: #e5e7eb;
+  --border-strong: #d1d5db;
+  --text-primary: #111827;
+  --text-body: #4b5563;
+  --text-muted: #9ca3af;
+  --accent: #4f46e5;
+  --accent-hover: #4338ca;
+  --accent-soft: #3730a3;
+  --selection-bg: rgba(79, 70, 229, 0.2);
+}
 
 ::selection {
-  background: rgba(99, 102, 241, 0.25);
-  color: #f8f8fc;
+  background: var(--selection-bg);
+  color: var(--text-primary);
 }
 
 ::-webkit-scrollbar {
@@ -10,16 +41,16 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #080812;
+  background: var(--bg);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #2a2a48;
+  background: var(--border-strong);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #3f3f68;
+  background: var(--text-muted);
 }
 
 html {
@@ -52,6 +83,11 @@ html {
   background-image: url("data:image/svg+xml;utf8,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noise%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.65%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noise)%22/%3E%3C/svg%3E");
 }
 
+[data-theme="light"] .noise-overlay {
+  opacity: 0.015;
+  mix-blend-mode: multiply;
+}
+
 /* Touch target minimum */
 .touch-min {
   min-height: 44px;
@@ -78,7 +114,7 @@ html {
   left: 1rem;
   right: 1rem;
   height: 2px;
-  background: #6366f1;
+  background: var(--accent);
   border-radius: 2px 2px 0 0;
 }
 
@@ -87,7 +123,6 @@ html {
   opacity: 0;
   animation: heroName 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
-
 .animate-fade-in {
   opacity: 0;
   animation: fadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
@@ -113,7 +148,7 @@ html {
   }
 }
 
-/* Hero orb with indigo glow */
+/* Hero orb with accent glow */
 .hero-orb {
   position: absolute;
   top: -220px;
@@ -121,10 +156,14 @@ html {
   width: 650px;
   height: 650px;
   border-radius: 50%;
-  opacity: 0;
+  opacity: 1;
   pointer-events: none;
   background: radial-gradient(circle, rgba(99, 102, 241, 0.12) 0%, rgba(79, 70, 229, 0.04) 40%, transparent 70%);
   animation: orbFloat 24s linear infinite;
+}
+
+[data-theme="light"] .hero-orb {
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.08) 0%, rgba(79, 70, 229, 0.03) 40%, transparent 70%);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -139,7 +178,7 @@ html {
   display: inline-block;
   width: 24px;
   height: 2px;
-  background: #6366f1;
+  background: var(--accent);
   margin-right: 12px;
   vertical-align: middle;
   border-radius: 1px;

@@ -2,6 +2,7 @@
 import MainHead from "./MainHead.astro";
 import Icon from "../components/Icon.astro";
 import NoiseOverlay from "../components/NoiseOverlay.astro";
+import ThemeToggle from "../components/ThemeToggle.astro";
 
 const { title, seoTitle, seoDesc } = Astro.props;
 
@@ -50,6 +51,7 @@ const isActive = (href: string) => {
           </div>
 
           <div class="flex items-center gap-1">
+            <ThemeToggle />
             <a href="https://github.com/abhilashpanda04" target="_blank" rel="noopener noreferrer" class="touch-min text-text-muted hover:text-text-primary transition-colors" aria-label="GitHub">
               <Icon name="github" class="h-5 w-5" size={20} />
             </a>
@@ -72,6 +74,7 @@ const isActive = (href: string) => {
             </a>
           ))}
           <div class="flex items-center gap-6 mt-8">
+            <ThemeToggle />
             <a href="https://github.com/abhilashpanda04" target="_blank" rel="noopener noreferrer" class="touch-min text-text-muted hover:text-text-primary transition-colors" aria-label="GitHub">
               <Icon name="github" class="h-6 w-6" size={24} />
             </a>
