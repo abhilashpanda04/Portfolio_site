@@ -203,33 +203,6 @@ html {
   display: none;
 }
 
-/* Constellation geometry layer */
-.constellation {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  pointer-events: none;
-}
-
-.constellation__node {
-  fill: var(--text-muted);
-  opacity: 0.4;
-}
-
-.constellation__line {
-  stroke: var(--accent);
-  stroke-width: 1;
-  opacity: 0.12;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .constellation {
-    display: none;
-  }
-}
-
 /* Reveal on scroll via CSS animation */
 .reveal {
   opacity: 0;
