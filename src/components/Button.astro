@@ -10,10 +10,10 @@ export interface Props {
 
 const { variant = 'primary', href, class: className = '', target, rel, download } = Astro.props;
 
-const base = 'inline-flex items-center justify-center gap-2 px-5 py-2.5 text-sm font-display font-medium transition-all duration-150 ease-out';
+const base = 'inline-flex items-center justify-center gap-2 px-5 py-2.5 text-sm font-display font-medium transition-all duration-200 ease-out';
 const variants = {
-  primary: 'bg-white text-bg hover:bg-[#d4d4d4]',
-  secondary: 'bg-transparent text-text-primary border border-border hover:border-border-strong hover:bg-white/[0.04]',
+  primary: 'bg-accent text-white hover:bg-accent-hover shadow-[0_0_20px_rgba(99,102,241,0.15)] hover:shadow-[0_0_28px_rgba(99,102,241,0.25)]',
+  secondary: 'bg-transparent text-text-primary border border-border hover:border-accent hover:text-accent',
 };
 
 const classes = `${base} ${variants[variant]} ${className}`;

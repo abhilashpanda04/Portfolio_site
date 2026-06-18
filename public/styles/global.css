@@ -1,8 +1,8 @@
-/* Swiss Grotesque global styles */
+/* Refined dark fintech global styles */
 
 ::selection {
-  background: rgba(255, 255, 255, 0.15);
-  color: #ffffff;
+  background: rgba(99, 102, 241, 0.25);
+  color: #f8f8fc;
 }
 
 ::-webkit-scrollbar {
@@ -10,16 +10,16 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #05050a;
+  background: #080812;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #2a2a3e;
+  background: #2a2a48;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #3a3a52;
+  background: #3f3f68;
 }
 
 html {
@@ -47,7 +47,7 @@ html {
   inset: 0;
   pointer-events: none;
   z-index: 100;
-  opacity: 0.03;
+  opacity: 0.025;
   mix-blend-mode: overlay;
   background-image: url("data:image/svg+xml;utf8,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noise%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.65%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noise)%22/%3E%3C/svg%3E");
 }
@@ -68,6 +68,18 @@ html {
 
 .nav-hidden {
   transform: translateY(-100%);
+}
+
+/* Active nav indicator */
+.nav-active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 1rem;
+  right: 1rem;
+  height: 2px;
+  background: #6366f1;
+  border-radius: 2px 2px 0 0;
 }
 
 /* Hero entrance animations */
@@ -101,18 +113,18 @@ html {
   }
 }
 
-/* Hero orb */
+/* Hero orb with indigo glow */
 .hero-orb {
   position: absolute;
-  top: -200px;
-  right: -100px;
-  width: 600px;
-  height: 600px;
+  top: -220px;
+  right: -120px;
+  width: 650px;
+  height: 650px;
   border-radius: 50%;
   opacity: 0;
   pointer-events: none;
-  background: radial-gradient(circle, rgba(107, 107, 138, 0.08) 0%, transparent 70%);
-  animation: orbFloat 20s linear infinite;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.12) 0%, rgba(79, 70, 229, 0.04) 40%, transparent 70%);
+  animation: orbFloat 24s linear infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -121,14 +133,21 @@ html {
   }
 }
 
+/* Section label accent rule */
+.section-label-accent::before {
+  content: '';
+  display: inline-block;
+  width: 24px;
+  height: 2px;
+  background: #6366f1;
+  margin-right: 12px;
+  vertical-align: middle;
+  border-radius: 1px;
+}
+
 /* Project chevron rotation */
 .project-chevron {
   transition: transform 0.2s ease;
-}
-
-.group[aria-expanded="true"] .project-chevron,
-.project-row[data-expanded="true"] .project-chevron {
-  transform: rotate(180deg);
 }
 
 /* Reveal on scroll via CSS animation */

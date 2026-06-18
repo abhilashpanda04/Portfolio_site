@@ -7,6 +7,6 @@ export interface Props {
 const { index, label } = Astro.props;
 ---
 
-<div class="font-mono text-caption text-text-muted uppercase tracking-[0.12em] mb-6">
-  {index} / {label}
+<div class="section-label-accent font-mono text-caption text-accent uppercase tracking-[0.12em] mb-6 flex items-center">
+  <span>{index} / {label}</span>
 </div>
