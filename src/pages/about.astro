@@ -1,6 +1,7 @@
 ---
 import MainLayout from "../layout/MainLayout.astro";
 import Icon from "../components/Icon.astro";
+import Logo from "../components/Logo.astro";
 import SectionLabel from "../components/SectionLabel.astro";
 import Button from "../components/Button.astro";
 import Reveal from "../components/Reveal.astro";
@@ -56,18 +57,27 @@ const seoDesc = "From institutional finance reconciliation to production AI at L
             years: "2017 — 2019",
             role: "Reconciliation Analyst",
             org: "State Street Global Advisory",
+            logo: "state-street",
+            logoAlt: "State Street logo",
+            logoClass: "h-7 w-auto max-w-[140px]",
             text: "Learned the language of institutional finance: reconciliations, settlements, corporate actions, and the edge cases that break models."
           },
           {
             years: "2019 — 2022",
             role: "Data Scientist",
             org: "London Stock Exchange Group",
+            logo: "lseg",
+            logoAlt: "LSEG logo",
+            logoClass: "h-8 w-auto max-w-[120px]",
             text: "Built NLP and ML pipelines for financial documents. Turned domain knowledge into automation."
           },
           {
             years: "2022 — Present",
             role: "Senior Data Scientist",
             org: "London Stock Exchange Group",
+            logo: "lseg",
+            logoAlt: "LSEG logo",
+            logoClass: "h-8 w-auto max-w-[120px]",
             text: "Leading GenAI and agentic systems for financial data extraction, RAG, and document intelligence."
           }
         ].map((entry, i) => (
@@ -76,11 +86,14 @@ const seoDesc = "From institutional finance reconciliation to production AI at L
               <span class="font-mono text-caption text-text-muted uppercase tracking-[0.12em] md:text-right">{entry.years}</span>
               <div class="md:hidden w-2 h-2 rounded-full bg-text-muted"></div>
             </div>
-            
+
             <div class="relative pl-10 md:pl-0">
               <div class="hidden md:block absolute left-[-49px] top-1 w-2 h-2 rounded-full bg-text-muted"></div>
               <h3 class="font-display text-title text-text-primary">{entry.role}</h3>
-              <p class="font-mono text-caption text-text-muted uppercase tracking-[0.12em] mt-1">{entry.org}</p>
+              <div class="mt-2 mb-1">
+                <Logo name={entry.logo} alt={entry.logoAlt} class={entry.logoClass} />
+              </div>
+              <p class="font-mono text-caption text-text-muted uppercase tracking-[0.12em]">{entry.org}</p>
               <p class="mt-4 text-body text-text-body leading-relaxed">{entry.text}</p>
             </div>
           </Reveal>

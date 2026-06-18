@@ -189,6 +189,20 @@ html {
   transition: transform 0.2s ease;
 }
 
+/* Logo theme variants */
+.logo-dark {
+  display: none;
+}
+.logo-light {
+  display: block;
+}
+[data-theme="dark"] .logo-dark {
+  display: block;
+}
+[data-theme="dark"] .logo-light {
+  display: none;
+}
+
 /* Reveal on scroll via CSS animation */
 .reveal {
   opacity: 0;
